@@ -1,17 +1,17 @@
 //
-//  SignUp.swift
+//  ChangeUserData.swift
 //  GBShop
 //
-//  Created by Aksilont on 16.02.2021.
+//  Created by Aksilont on 17.02.2021.
 //
 
 import Foundation
 import Alamofire
 
-class SignUp: AbstractRequestFactory {
-    let errorParser: AbstractErrorParser
-    let sessionManager: Session
-    let queue: DispatchQueue
+class ChangeUserData: AbstractRequestFactory {
+    var errorParser: AbstractErrorParser
+    var sessionManager: Session
+    var queue: DispatchQueue
     let baseUrl: URL
     
     init(errorParser: AbstractErrorParser, sessionManager: Session, queue: DispatchQueue = DispatchQueue.global(qos: .utility), baseUrl: URL) {
@@ -22,11 +22,11 @@ class SignUp: AbstractRequestFactory {
     }
 }
 
-extension SignUp {
-    struct SignUpRequest: RequestRouter {
+extension ChangeUserData {
+    struct ChangeUserDataRequest: RequestRouter {
         let baseUrl: URL
         let method: HTTPMethod = .get
-        let path: String = "registerUser.json"
+        let path: String = "changeUserData.json"
         
         let id: String
         let userName: String
@@ -50,8 +50,8 @@ extension SignUp {
     }
 }
 
-extension SignUp: SignUpRequestFactory {
-    func signUp(
+extension ChangeUserData: ChangeUserDataRequestFactory {
+    func changeUserData(
         id: String,
         userName: String,
         password: String,
@@ -59,9 +59,9 @@ extension SignUp: SignUpRequestFactory {
         gender: String,
         creditCard: String,
         bio: String,
-        completionHandler: @escaping(AFDataResponse<SignUpResult>) -> Void
+        completionHandler: @escaping(AFDataResponse<ChangeUserDataResult>) -> Void
     ) {
-        let requestModel = SignUpRequest(
+        let requestModel = ChangeUserDataRequest(
             baseUrl: baseUrl,
             id: id,
             userName: userName,

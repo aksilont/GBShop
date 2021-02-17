@@ -10,6 +10,12 @@
 		7A256F2C25DC6243009D5F01 /* SignUpRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F2B25DC6243009D5F01 /* SignUpRequestFactory.swift */; };
 		7A256F3125DC626D009D5F01 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F3025DC626D009D5F01 /* SignUp.swift */; };
 		7A256F3625DC62B7009D5F01 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F3525DC62B7009D5F01 /* SignUpResult.swift */; };
+		7A2D669125DD4B1100AFD665 /* LogoutRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D669025DD4B1100AFD665 /* LogoutRequestFactory.swift */; };
+		7A2D669625DD4B1900AFD665 /* Logout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D669525DD4B1900AFD665 /* Logout.swift */; };
+		7A2D669B25DD4E9E00AFD665 /* LogoutResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D669A25DD4E9E00AFD665 /* LogoutResult.swift */; };
+		7A2D66A025DD535400AFD665 /* ChangeUserDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D669F25DD535400AFD665 /* ChangeUserDataResult.swift */; };
+		7A2D66A825DD537D00AFD665 /* ChangeUserDataRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D66A725DD537D00AFD665 /* ChangeUserDataRequestFactory.swift */; };
+		7A2D66AD25DD538E00AFD665 /* ChangeUserData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A2D66AC25DD538E00AFD665 /* ChangeUserData.swift */; };
 		7A35DADA25DA4F28005B4A1F /* RequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A35DAD925DA4F28005B4A1F /* RequestFactory.swift */; };
 		7AA5AD0E25D8027A00D9F949 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5AD0D25D8027A00D9F949 /* AppDelegate.swift */; };
 		7AA5AD1025D8027A00D9F949 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA5AD0F25D8027A00D9F949 /* SceneDelegate.swift */; };
@@ -50,6 +56,12 @@
 		7A256F2B25DC6243009D5F01 /* SignUpRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestFactory.swift; sourceTree = "<group>"; };
 		7A256F3025DC626D009D5F01 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		7A256F3525DC62B7009D5F01 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
+		7A2D669025DD4B1100AFD665 /* LogoutRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutRequestFactory.swift; sourceTree = "<group>"; };
+		7A2D669525DD4B1900AFD665 /* Logout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logout.swift; sourceTree = "<group>"; };
+		7A2D669A25DD4E9E00AFD665 /* LogoutResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutResult.swift; sourceTree = "<group>"; };
+		7A2D669F25DD535400AFD665 /* ChangeUserDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataResult.swift; sourceTree = "<group>"; };
+		7A2D66A725DD537D00AFD665 /* ChangeUserDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataRequestFactory.swift; sourceTree = "<group>"; };
+		7A2D66AC25DD538E00AFD665 /* ChangeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserData.swift; sourceTree = "<group>"; };
 		7A35DAD925DA4F28005B4A1F /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
 		7AA5AD0A25D8027A00D9F949 /* GBShop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GBShop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		7AA5AD0D25D8027A00D9F949 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -121,6 +133,8 @@
 		7A256F2925DC6192009D5F01 /* ChangeUserData */ = {
 			isa = PBXGroup;
 			children = (
+				7A2D66A725DD537D00AFD665 /* ChangeUserDataRequestFactory.swift */,
+				7A2D66AC25DD538E00AFD665 /* ChangeUserData.swift */,
 			);
 			path = ChangeUserData;
 			sourceTree = "<group>";
@@ -128,6 +142,8 @@
 		7A256F2A25DC61D3009D5F01 /* Logout */ = {
 			isa = PBXGroup;
 			children = (
+				7A2D669025DD4B1100AFD665 /* LogoutRequestFactory.swift */,
+				7A2D669525DD4B1900AFD665 /* Logout.swift */,
 			);
 			path = Logout;
 			sourceTree = "<group>";
@@ -207,6 +223,8 @@
 			children = (
 				7AA5AD7E25D9CA4C00D9F949 /* LoginResult.swift */,
 				7A256F3525DC62B7009D5F01 /* SignUpResult.swift */,
+				7A2D669A25DD4E9E00AFD665 /* LogoutResult.swift */,
+				7A2D669F25DD535400AFD665 /* ChangeUserDataResult.swift */,
 				7AA5AD8325D9CA8400D9F949 /* User.swift */,
 			);
 			path = Entity;
@@ -410,7 +428,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A2D66A025DD535400AFD665 /* ChangeUserDataResult.swift in Sources */,
+				7A2D669B25DD4E9E00AFD665 /* LogoutResult.swift in Sources */,
+				7A2D669125DD4B1100AFD665 /* LogoutRequestFactory.swift in Sources */,
 				7A35DADA25DA4F28005B4A1F /* RequestFactory.swift in Sources */,
+				7A2D66AD25DD538E00AFD665 /* ChangeUserData.swift in Sources */,
 				7A256F3625DC62B7009D5F01 /* SignUpResult.swift in Sources */,
 				7AA5AD6025D9BC5600D9F949 /* AbstractErrorParser.swift in Sources */,
 				7AA5AD7025D9BF2B00D9F949 /* ResponseCodable.swift in Sources */,
@@ -420,8 +442,10 @@
 				7AA5AD7F25D9CA4C00D9F949 /* LoginResult.swift in Sources */,
 				7A256F3125DC626D009D5F01 /* SignUp.swift in Sources */,
 				7AA5AD9325D9CE1B00D9F949 /* Auth.swift in Sources */,
+				7A2D66A825DD537D00AFD665 /* ChangeUserDataRequestFactory.swift in Sources */,
 				7AA5AD8425D9CA8400D9F949 /* User.swift in Sources */,
 				7AA5AD1025D8027A00D9F949 /* SceneDelegate.swift in Sources */,
+				7A2D669625DD4B1900AFD665 /* Logout.swift in Sources */,
 				7AA5AD7525D9C50300D9F949 /* AbstractRequestFactory.swift in Sources */,
 				7A256F2C25DC6243009D5F01 /* SignUpRequestFactory.swift in Sources */,
 				7AA5AD6525D9BD3200D9F949 /* ErrorParser.swift in Sources */,
