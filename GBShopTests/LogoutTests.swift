@@ -11,6 +11,13 @@ import Alamofire
 
 class LogoutTests: XCTestCase {
 
-
-
+    // MARK: - Positive tests
+    func testLogout() throws {
+        
+    }
+    
+    // MARK: - Negative tests
+    func testFailedLogout() throws {
+        
+    }
 }

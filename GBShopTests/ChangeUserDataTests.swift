@@ -11,6 +11,13 @@ import Alamofire
 
 class ChangeUserDataTests: XCTestCase {
 
-
-
+    // MARK: - Positive tests
+    func testChangeUserData() throws {
+        
+    }
+    
+    // MARK: - Negative tests
+    func testFailedChangeUserData() throws {
+        
+    }
 }
