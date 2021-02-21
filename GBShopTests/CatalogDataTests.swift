@@ -20,8 +20,8 @@ class CatalogDataTests: XCTestCase {
         
         let session = Session(configuration: configureation)
         
-        let catalogData = CatalogData(errorParser: ErrorParser(), session: session, baseUrl: baseUrl)
+        let catalogData = CatalogData(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         
-        XCTAssertNil(catalogData)
+        XCTAssertNotNil(catalogData, "Init Catalog Data")
     }
 }
