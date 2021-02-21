@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     )
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        
+        /*
         //Authorize
         let auth = requestFactory.makeAuthRequestFactory()
         auth.login(userName: "Somebody", password: "mypassword") { (response) in
@@ -59,6 +59,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 print(error.localizedDescription)
             }
         }
+        */
         
         return true
     }

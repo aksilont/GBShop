@@ -40,7 +40,7 @@ class CatalogDataTests: XCTestCase {
         catalogData.getData(pageNumber: "1", categoryId: "1") { response in
             switch response.result {
             case .success(let modelResult):
-                XCTAssertEqual(modelResult.result.count, 2)
+                XCTAssertEqual(modelResult.count, 2)
                 catalogDataExpectation.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)
