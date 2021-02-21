@@ -49,4 +49,28 @@ class CatalogDataTests: XCTestCase {
         
         wait(for: [catalogDataExpectation], timeout: 5.0)
     }
+    
+    func testFailedGetDataFromCatalog() throws {
+        let baseUrl = try XCTUnwrap(URL(string: "https://failURL"))
+        
+        let configureation = URLSessionConfiguration.default
+        configureation.httpShouldSetCookies = false
+        configureation.headers = .default
+        
+        let session = Session(configuration: configureation)
+        
+        let catalogData = CatalogData(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
+        let catalogDataExpectation = expectation(description: "Catalog data")
+                
+        catalogData.getData(pageNumber: "1", categoryId: "1") { response in
+            switch response.result {
+            case .success(let modelResult):
+                XCTFail("Should have a error \(modelResult)")
+            case .failure:
+                catalogDataExpectation.fulfill()
+            }
+        }
+        
+        wait(for: [catalogDataExpectation], timeout: 5.0)
+    }
 }
