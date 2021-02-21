@@ -22,10 +22,9 @@ class AuthTests: XCTestCase {
         
         let auth = Auth(errorParser: ErrorParser(),
                         sessionManager: session,
-                        queue: DispatchQueue.global(qos: .utility),
                         baseUrl: baseUrl)
         
-        let loggedIn = expectation(description: "loged in")
+        let authExpectation = expectation(description: "loged in")
         auth.login(userName: "Somebody", password: "mypassword") { (response) in
             switch response.result {
             case .success(let model):
@@ -35,13 +34,13 @@ class AuthTests: XCTestCase {
                 XCTAssertEqual(model.user.name, "John")
                 XCTAssertEqual(model.user.lastName, "Doe")
                 
-                loggedIn.fulfill()
+                authExpectation.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
         }
         
-        waitForExpectations(timeout: 1)
+        wait(for: [authExpectation], timeout: 5.0)
     }
     
     // MARK: - Negative tests
@@ -55,19 +54,18 @@ class AuthTests: XCTestCase {
         
         let auth = Auth(errorParser: ErrorParser(),
                         sessionManager: session,
-                        queue: DispatchQueue.global(qos: .utility),
                         baseUrl: baseUrl)
         
-        let loggedIn = expectation(description: "loged in")
+        let authExpectation = expectation(description: "loged in")
         auth.login(userName: "Somebody", password: "mypassword") { (response) in
             switch response.result {
             case .success(let model):
                 XCTFail("Must have failed: \(model)")
             case .failure:
-                loggedIn.fulfill()
+                authExpectation.fulfill()
             }
         }
         
-        waitForExpectations(timeout: 1)
+        wait(for: [authExpectation], timeout: 5.0)
     }
 }

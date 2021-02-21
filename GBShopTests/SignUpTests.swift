@@ -22,20 +22,19 @@ class SignUpTests: XCTestCase {
         let session = Session(configuration: configuration)
         
         let signUp = SignUp(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
-        let loggedIn = expectation(description: "Sign Up")
+        let signUpExpectation = expectation(description: "Sign Up")
         
         signUp.signUp(id: "123", userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
-                
-                loggedIn.fulfill()
+                signUpExpectation.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)
             }
         }
         
-        waitForExpectations(timeout: 1)
+        wait(for: [signUpExpectation], timeout: 5.0)
     }
     
     // MARK: - Negative tests
@@ -49,7 +48,7 @@ class SignUpTests: XCTestCase {
         let session = Session(configuration: configuration)
         
         let signUp = SignUp(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
-        let signUpExpectation = XCTestExpectation(description: "Sign Up")
+        let signUpExpectation = expectation(description: "Sign Up")
         
         signUp.signUp(id: "123", userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
             switch response.result {
@@ -60,6 +59,6 @@ class SignUpTests: XCTestCase {
             }
         }
         
-        wait(for: [signUpExpectation], timeout: 5)
+        wait(for: [signUpExpectation], timeout: 5.0)
     }
 }
