@@ -22,7 +22,7 @@ class GetGoodsByIdTests: XCTestCase {
         
         let goodsById = GoodsById(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         
-        XCTAssertNotNil(catalogData, "Init GoodsById")
+        XCTAssertNotNil(goodsById, "Init GoodsById")
     }
 
 }
