@@ -12,7 +12,7 @@ import Alamofire
 class CatalogDataTests: XCTestCase {
 
     func testInitCatalogData() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         
         let configureation = URLSessionConfiguration.default
         configureation.httpShouldSetCookies = false
@@ -26,7 +26,7 @@ class CatalogDataTests: XCTestCase {
     }
     
     func testGetDataFromCatalog() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         
         let configureation = URLSessionConfiguration.default
         configureation.httpShouldSetCookies = false
@@ -40,7 +40,7 @@ class CatalogDataTests: XCTestCase {
         catalogData.getData(pageNumber: "1", categoryId: "1") { response in
             switch response.result {
             case .success(let modelResult):
-                XCTAssertEqual(modelResult.count, 2)
+                XCTAssertEqual(modelResult.products.count, 3)
                 catalogDataExpectation.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)

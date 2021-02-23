@@ -12,7 +12,7 @@ import Alamofire
 class GetGoodsByIdTests: XCTestCase {
 
     func testInitGoodsById() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         
         let configureation = URLSessionConfiguration.default
         configureation.httpShouldSetCookies = false
@@ -26,7 +26,7 @@ class GetGoodsByIdTests: XCTestCase {
     }
 
     func testGetGoodsById() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         
         let configureation = URLSessionConfiguration.default
         configureation.httpShouldSetCookies = false
@@ -41,9 +41,9 @@ class GetGoodsByIdTests: XCTestCase {
             switch response.result {
             case .success(let modelResult):
                 XCTAssertEqual(modelResult.result, 1)
-                XCTAssertEqual(modelResult.name, "Ноутбук")
-                XCTAssertEqual(modelResult.price, 45600)
-                XCTAssertEqual(modelResult.description, "Мощный игровой ноутбук")
+                XCTAssertEqual(modelResult.name, "Product #1")
+                XCTAssertEqual(modelResult.price, 1234)
+                XCTAssertEqual(modelResult.description, "Description")
                 goodsByIdExpectation.fulfill()
             case .failure(let error):
                 XCTFail(error.localizedDescription)

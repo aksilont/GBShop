@@ -14,7 +14,7 @@ class RequestFactoryTests: XCTestCase {
     func testAuthorize() throws {
         // Given
         // Initialize test data and system under test
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         let requestFactory = RequestFactory(baseUrl: baseUrl)
         let auth = requestFactory.makeAuthRequestFactory()
         
@@ -33,7 +33,7 @@ class RequestFactoryTests: XCTestCase {
             }
         }
         
-        waitForExpectations(timeout: 5)
+        waitForExpectations(timeout: 5.0)
     }
     
     

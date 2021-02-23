@@ -25,10 +25,10 @@ class SignUp: AbstractRequestFactory {
 extension SignUp {
     struct SignUpRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "registerUser.json"
+        let method: HTTPMethod = .post
+        let path: String = "signup"
         
-        let id: String
+        let id: Int
         let userName: String
         let password: String
         let email: String
@@ -52,7 +52,7 @@ extension SignUp {
 
 extension SignUp: SignUpRequestFactory {
     func signUp(
-        id: String,
+        id: Int,
         userName: String,
         password: String,
         email: String,

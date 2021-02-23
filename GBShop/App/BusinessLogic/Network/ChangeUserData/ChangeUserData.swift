@@ -25,8 +25,8 @@ class ChangeUserData: AbstractRequestFactory {
 extension ChangeUserData {
     struct ChangeUserDataRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "changeUserData.json"
+        let method: HTTPMethod = .post
+        let path: String = "changeUserData"
         
         let id: String
         let userName: String

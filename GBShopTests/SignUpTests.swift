@@ -13,7 +13,7 @@ class SignUpTests: XCTestCase {
 
     // MARK: - Positive tests
     func testSignUp() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
@@ -24,7 +24,7 @@ class SignUpTests: XCTestCase {
         let signUp = SignUp(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         let signUpExpectation = expectation(description: "Sign Up")
         
-        signUp.signUp(id: "123", userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
+        signUp.signUp(id: 123, userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
@@ -50,7 +50,7 @@ class SignUpTests: XCTestCase {
         let signUp = SignUp(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         let signUpExpectation = expectation(description: "Sign Up")
         
-        signUp.signUp(id: "123", userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
+        signUp.signUp(id: 123, userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
             switch response.result {
             case .success(let model):
                 XCTFail("Should have failed \(model)")

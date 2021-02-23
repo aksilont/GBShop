@@ -12,6 +12,6 @@ protocol CatalogDataRequestFactory {
     func getData(
         pageNumber: String,
         categoryId: String,
-        completionHandler: @escaping(AFDataResponse<[Product]>) -> Void
+        completionHandler: @escaping(AFDataResponse<CatalogDataResult>) -> Void
     )
 }
