@@ -7,6 +7,17 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A1C9DC625EBA703007A6358 /* ReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DC525EBA703007A6358 /* ReviewsTests.swift */; };
+		7A1C9DCB25EBA8B2007A6358 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DCA25EBA8B2007A6358 /* ReviewManager.swift */; };
+		7A1C9DD325EBAB93007A6358 /* AddReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DD225EBAB93007A6358 /* AddReviewRequestFactory.swift */; };
+		7A1C9DD925EBAC5B007A6358 /* AddReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DD825EBAC5B007A6358 /* AddReviewResult.swift */; };
+		7A1C9DE425EBB14C007A6358 /* ApproveReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DE325EBB14C007A6358 /* ApproveReviewRequestFactory.swift */; };
+		7A1C9DEC25EBB2A7007A6358 /* ApproveReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DEB25EBB2A7007A6358 /* ApproveReviewResult.swift */; };
+		7A1C9DF125EBB790007A6358 /* RemoveReviewResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DF025EBB790007A6358 /* RemoveReviewResult.swift */; };
+		7A1C9DF625EBB7C0007A6358 /* RemoveReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DF525EBB7C0007A6358 /* RemoveReviewRequestFactory.swift */; };
+		7A1C9DFB25EBC58F007A6358 /* GetReviewsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DFA25EBC58F007A6358 /* GetReviewsResult.swift */; };
+		7A1C9E0025EBC5B3007A6358 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DFF25EBC5B3007A6358 /* Review.swift */; };
+		7A1C9E0525EBC669007A6358 /* GetReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9E0425EBC669007A6358 /* GetReviewRequestFactory.swift */; };
 		7A256F2C25DC6243009D5F01 /* SignUpRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F2B25DC6243009D5F01 /* SignUpRequestFactory.swift */; };
 		7A256F3125DC626D009D5F01 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F3025DC626D009D5F01 /* SignUp.swift */; };
 		7A256F3625DC62B7009D5F01 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F3525DC62B7009D5F01 /* SignUpResult.swift */; };
@@ -66,6 +77,17 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A1C9DC525EBA703007A6358 /* ReviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTests.swift; sourceTree = "<group>"; };
+		7A1C9DCA25EBA8B2007A6358 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
+		7A1C9DD225EBAB93007A6358 /* AddReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewRequestFactory.swift; sourceTree = "<group>"; };
+		7A1C9DD825EBAC5B007A6358 /* AddReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewResult.swift; sourceTree = "<group>"; };
+		7A1C9DE325EBB14C007A6358 /* ApproveReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveReviewRequestFactory.swift; sourceTree = "<group>"; };
+		7A1C9DEB25EBB2A7007A6358 /* ApproveReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApproveReviewResult.swift; sourceTree = "<group>"; };
+		7A1C9DF025EBB790007A6358 /* RemoveReviewResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveReviewResult.swift; sourceTree = "<group>"; };
+		7A1C9DF525EBB7C0007A6358 /* RemoveReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoveReviewRequestFactory.swift; sourceTree = "<group>"; };
+		7A1C9DFA25EBC58F007A6358 /* GetReviewsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewsResult.swift; sourceTree = "<group>"; };
+		7A1C9DFF25EBC5B3007A6358 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
+		7A1C9E0425EBC669007A6358 /* GetReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewRequestFactory.swift; sourceTree = "<group>"; };
 		7A256F2B25DC6243009D5F01 /* SignUpRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestFactory.swift; sourceTree = "<group>"; };
 		7A256F3025DC626D009D5F01 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		7A256F3525DC62B7009D5F01 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
@@ -138,6 +160,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A1C9DC025EBA535007A6358 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				7A1C9DD225EBAB93007A6358 /* AddReviewRequestFactory.swift */,
+				7A1C9DE325EBB14C007A6358 /* ApproveReviewRequestFactory.swift */,
+				7A1C9DF525EBB7C0007A6358 /* RemoveReviewRequestFactory.swift */,
+				7A1C9E0425EBC669007A6358 /* GetReviewRequestFactory.swift */,
+				7A1C9DCA25EBA8B2007A6358 /* ReviewManager.swift */,
+			);
+			path = Reviews;
+			sourceTree = "<group>";
+		};
+		7A1C9DC125EBA569007A6358 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				7A1C9DC525EBA703007A6358 /* ReviewsTests.swift */,
+			);
+			path = Reviews;
+			sourceTree = "<group>";
+		};
+		7A1C9DD725EBAC3B007A6358 /* Reviews */ = {
+			isa = PBXGroup;
+			children = (
+				7A1C9DD825EBAC5B007A6358 /* AddReviewResult.swift */,
+				7A1C9DEB25EBB2A7007A6358 /* ApproveReviewResult.swift */,
+				7A1C9DF025EBB790007A6358 /* RemoveReviewResult.swift */,
+				7A1C9DFA25EBC58F007A6358 /* GetReviewsResult.swift */,
+				7A1C9DFF25EBC5B3007A6358 /* Review.swift */,
+			);
+			path = Reviews;
+			sourceTree = "<group>";
+		};
 		7A256F2725DC614A009D5F01 /* Auth */ = {
 			isa = PBXGroup;
 			children = (
@@ -233,6 +287,7 @@
 				7A4F798F25DDB771000C562F /* ChangeUserDataTests.swift */,
 				7A70A43625E24F37003023DA /* CatalogDataTests.swift */,
 				7A70CEB425E292FF00EE360D /* GetGoodsByIdTests.swift */,
+				7A1C9DC125EBA569007A6358 /* Reviews */,
 				7AA5AD2625D8027B00D9F949 /* Info.plist */,
 			);
 			path = GBShopTests;
@@ -279,6 +334,7 @@
 				7AC9581725E5C3B0001C24B1 /* CatalogDataResult.swift */,
 				7A70A45125E27F2D003023DA /* Product.swift */,
 				7A70CECA25E2959000EE360D /* GoodsByIdResult.swift */,
+				7A1C9DD725EBAC3B007A6358 /* Reviews */,
 			);
 			path = Entity;
 			sourceTree = "<group>";
@@ -344,6 +400,7 @@
 				7A256F2925DC6192009D5F01 /* ChangeUserData */,
 				7A70A43E25E27853003023DA /* CatalogData */,
 				7A70CEBC25E2939500EE360D /* GoodsById */,
+				7A1C9DC025EBA535007A6358 /* Reviews */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -504,9 +561,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7A1C9DD325EBAB93007A6358 /* AddReviewRequestFactory.swift in Sources */,
 				7A2D66A025DD535400AFD665 /* ChangeUserDataResult.swift in Sources */,
 				7A70A44025E2789F003023DA /* CatalogData.swift in Sources */,
+				7A1C9E0525EBC669007A6358 /* GetReviewRequestFactory.swift in Sources */,
 				7A2D669B25DD4E9E00AFD665 /* LogoutResult.swift in Sources */,
+				7A1C9DE425EBB14C007A6358 /* ApproveReviewRequestFactory.swift in Sources */,
 				7A2D669125DD4B1100AFD665 /* LogoutRequestFactory.swift in Sources */,
 				7A35DADA25DA4F28005B4A1F /* RequestFactory.swift in Sources */,
 				7A2D66AD25DD538E00AFD665 /* ChangeUserData.swift in Sources */,
@@ -518,11 +578,18 @@
 				7A70CEBE25E293B500EE360D /* GoodsById.swift in Sources */,
 				7AA5AD7A25D9C76200D9F949 /* RequestRouter.swift in Sources */,
 				7AA5AD0E25D8027A00D9F949 /* AppDelegate.swift in Sources */,
+				7A1C9DD925EBAC5B007A6358 /* AddReviewResult.swift in Sources */,
+				7A1C9E0025EBC5B3007A6358 /* Review.swift in Sources */,
+				7A1C9DFB25EBC58F007A6358 /* GetReviewsResult.swift in Sources */,
 				7AA5AD7F25D9CA4C00D9F949 /* LoginResult.swift in Sources */,
+				7A1C9DEC25EBB2A7007A6358 /* ApproveReviewResult.swift in Sources */,
 				7A256F3125DC626D009D5F01 /* SignUp.swift in Sources */,
 				7AA5AD9325D9CE1B00D9F949 /* Auth.swift in Sources */,
 				7A2D66A825DD537D00AFD665 /* ChangeUserDataRequestFactory.swift in Sources */,
+				7A1C9DF125EBB790007A6358 /* RemoveReviewResult.swift in Sources */,
+				7A1C9DCB25EBA8B2007A6358 /* ReviewManager.swift in Sources */,
 				7AA5AD8425D9CA8400D9F949 /* User.swift in Sources */,
+				7A1C9DF625EBB7C0007A6358 /* RemoveReviewRequestFactory.swift in Sources */,
 				7A70CECB25E2959000EE360D /* GoodsByIdResult.swift in Sources */,
 				7A70CEC625E2952700EE360D /* GoodsByIdRequestFactory.swift in Sources */,
 				7AA5AD1025D8027A00D9F949 /* SceneDelegate.swift in Sources */,
@@ -544,6 +611,7 @@
 				7A4F798B25DDB75F000C562F /* LogoutTests.swift in Sources */,
 				7A4F797E25DDB733000C562F /* AuthTests.swift in Sources */,
 				7A4F799025DDB771000C562F /* ChangeUserDataTests.swift in Sources */,
+				7A1C9DC625EBA703007A6358 /* ReviewsTests.swift in Sources */,
 				7A70A43725E24F37003023DA /* CatalogDataTests.swift in Sources */,
 				7A70CEB525E292FF00EE360D /* GetGoodsByIdTests.swift in Sources */,
 			);
