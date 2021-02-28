@@ -8,6 +8,11 @@
 import Foundation
 
 struct CatalogDataResult: Codable {
-    let page_number: Int
+    let pageNumber: Int
     let products: [Product]
+    
+    enum CodingKeys: String, CodingKey {
+        case pageNumber = "page_number"
+        case products
+    }
 }

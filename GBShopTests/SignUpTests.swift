@@ -24,7 +24,14 @@ class SignUpTests: XCTestCase {
         let signUp = SignUp(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         let signUpExpectation = expectation(description: "Sign Up")
         
-        signUp.signUp(id: 123, userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
+        signUp.signUp(id: 123,
+                      userName: "Bob",
+                      password: "qwer",
+                      email: "mail@mail.ru",
+                      gender: "male",
+                      creditCard: "123",
+                      bio: "About..."
+        ) { response in
             switch response.result {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
@@ -50,7 +57,14 @@ class SignUpTests: XCTestCase {
         let signUp = SignUp(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         let signUpExpectation = expectation(description: "Sign Up")
         
-        signUp.signUp(id: 123, userName: "Bob", password: "qwer", email: "mail@mail.ru", gender: "male", creditCard: "123", bio: "About..."){ (response) in
+        signUp.signUp(id: 123,
+                      userName: "Bob",
+                      password: "qwer",
+                      email: "mail@mail.ru",
+                      gender: "male",
+                      creditCard: "123",
+                      bio: "About..."
+        ) { response in
             switch response.result {
             case .success(let model):
                 XCTFail("Should have failed \(model)")
