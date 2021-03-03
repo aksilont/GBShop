@@ -13,6 +13,6 @@ struct PayBasketResult: Codable {
     
     enum CodingKeys: String, CodingKey {
         case result
-        case userMessage
+        case userMessage = "user_message"
     }
 }

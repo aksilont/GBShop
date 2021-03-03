@@ -43,8 +43,8 @@ class BasketTests: XCTestCase {
     
     func testAddToBasket() {
         let basketManager = BasketManager(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
-        
         let expect = expectation(description: "Add to basket")
+        
         basketManager.addToBasket(productId: 123, quantity: 1) { response in
             switch response.result {
             case .success(let modelRequest):
@@ -70,6 +70,7 @@ class BasketTests: XCTestCase {
                 expect.fulfill()
             }
         }
+        
         waitForExpectations(timeout: 10.0)
     }
     
@@ -77,8 +78,8 @@ class BasketTests: XCTestCase {
     
     func testDeleteFromBasket() {
         let basketManager = BasketManager(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
-        
         let expect = expectation(description: "Delete from basket")
+        
         basketManager.deleteFromBasket(productId: 123) { response in
             switch response.result {
             case .success(let modelRequest):
@@ -104,6 +105,7 @@ class BasketTests: XCTestCase {
                 expect.fulfill()
             }
         }
+        
         waitForExpectations(timeout: 10.0)
     }
     
