@@ -13,7 +13,7 @@ class ChangeUserDataTests: XCTestCase {
 
     // MARK: - Positive tests
     func testChangeUserData() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false

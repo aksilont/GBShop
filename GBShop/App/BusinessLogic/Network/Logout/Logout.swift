@@ -25,8 +25,8 @@ class Logout: AbstractRequestFactory {
 extension Logout {
     struct LogoutRequest: RequestRouter {
         let baseUrl: URL
-        let method: HTTPMethod = .get
-        let path: String = "logout.json"
+        let method: HTTPMethod = .post
+        let path: String = "logout"
         
         let id: String
         

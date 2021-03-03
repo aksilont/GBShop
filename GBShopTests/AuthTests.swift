@@ -13,7 +13,7 @@ class AuthTests: XCTestCase {
 
     // MARK: - Positive tests
     func testLogin() throws {
-        let baseUrl = try XCTUnwrap(URL(string: "https://raw.githubusercontent.com/GeekBrainsTutorial/online-store-api/master/responses/"))
+        let baseUrl = try XCTUnwrap(URL(string: "https://dry-earth-72663.herokuapp.com/"))
         
         let configuration = URLSessionConfiguration.default
         configuration.httpShouldSetCookies = false
@@ -30,9 +30,9 @@ class AuthTests: XCTestCase {
             case .success(let model):
                 XCTAssertEqual(model.result, 1)
                 XCTAssertEqual(model.user.id, 123)
-                XCTAssertEqual(model.user.login, "geekbrains")
-                XCTAssertEqual(model.user.name, "John")
-                XCTAssertEqual(model.user.lastName, "Doe")
+                XCTAssertEqual(model.user.login, "Test")
+                XCTAssertEqual(model.user.name, "Name")
+                XCTAssertEqual(model.user.lastName, "Last name")
                 
                 authExpectation.fulfill()
             case .failure(let error):
