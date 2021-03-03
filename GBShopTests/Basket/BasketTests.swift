@@ -106,4 +106,39 @@ class BasketTests: XCTestCase {
         }
         waitForExpectations(timeout: 10.0)
     }
+    
+    // MARK: - Test Pay basket
+    
+    func testPayBasket() {
+        let basketManager = BasketManager(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
+        let expect = expectation(description: "Pay basket")
+        
+        basketManager.payBasket(userId: 123) { response in
+            switch response.result {
+            case .success(let modelResult):
+                XCTAssertEqual(modelResult.result, 1)
+                expect.fulfill()
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+        }
+        
+        waitForExpectations(timeout: 10.0)
+    }
+    
+    func testPatBasketFail() {
+        let basketManager = BasketManager(errorParser: ErrorParser(), sessionManager: session, baseUrl: failUrl)
+        let expect = expectation(description: "Pay basket test to FAIL")
+        
+        basketManager.payBasket(userId: 123) { response in
+            switch response.result {
+            case .success(let modelResult):
+                XCTFail("Should have a error \(modelResult)")
+            case .failure:
+                expect.fulfill()
+            }
+        }
+        
+        waitForExpectations(timeout: 10.0)
+    }
 }

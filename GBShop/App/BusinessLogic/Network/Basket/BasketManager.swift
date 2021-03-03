@@ -78,3 +78,27 @@ extension BasketManager: DeleteFromBasketRequestFactory {
         self.request(request: requestModel, completionHander: completionHandler)
     }
 }
+
+// MARK: - Pay basket
+
+extension BasketManager: PayBasketRequestFactory {
+    
+    struct PayBasketRequest: RequestRouter {
+        var baseUrl: URL
+        var method: HTTPMethod = .post
+        var path: String = "payBasket"
+        
+        var userId: Int
+        
+        var parameters: Parameters? {
+            return [
+                "id_user": userId
+            ]
+        }
+    }
+    
+    func payBasket(userId: Int, completionHandler: @escaping (AFDataResponse<PayBasketResult>) -> Void) {
+        let requestModel = PayBasketRequest(baseUrl: baseUrl, userId: 1)
+        self.request(request: requestModel, completionHander: completionHandler)
+    }
+}

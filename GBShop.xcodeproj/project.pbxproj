@@ -18,6 +18,8 @@
 		7A1C9DFB25EBC58F007A6358 /* GetReviewsResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DFA25EBC58F007A6358 /* GetReviewsResult.swift */; };
 		7A1C9E0025EBC5B3007A6358 /* Review.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DFF25EBC5B3007A6358 /* Review.swift */; };
 		7A1C9E0525EBC669007A6358 /* GetReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9E0425EBC669007A6358 /* GetReviewRequestFactory.swift */; };
+		7A248ACD25F02F71008670B0 /* PayBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A248ACC25F02F71008670B0 /* PayBasketRequestFactory.swift */; };
+		7A248AD225F02FC0008670B0 /* PayBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A248AD125F02FC0008670B0 /* PayBasketResult.swift */; };
 		7A256F2C25DC6243009D5F01 /* SignUpRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F2B25DC6243009D5F01 /* SignUpRequestFactory.swift */; };
 		7A256F3125DC626D009D5F01 /* SignUp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F3025DC626D009D5F01 /* SignUp.swift */; };
 		7A256F3625DC62B7009D5F01 /* SignUpResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A256F3525DC62B7009D5F01 /* SignUpResult.swift */; };
@@ -94,6 +96,8 @@
 		7A1C9DFA25EBC58F007A6358 /* GetReviewsResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewsResult.swift; sourceTree = "<group>"; };
 		7A1C9DFF25EBC5B3007A6358 /* Review.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Review.swift; sourceTree = "<group>"; };
 		7A1C9E0425EBC669007A6358 /* GetReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewRequestFactory.swift; sourceTree = "<group>"; };
+		7A248ACC25F02F71008670B0 /* PayBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketRequestFactory.swift; sourceTree = "<group>"; };
+		7A248AD125F02FC0008670B0 /* PayBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketResult.swift; sourceTree = "<group>"; };
 		7A256F2B25DC6243009D5F01 /* SignUpRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRequestFactory.swift; sourceTree = "<group>"; };
 		7A256F3025DC626D009D5F01 /* SignUp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUp.swift; sourceTree = "<group>"; };
 		7A256F3525DC62B7009D5F01 /* SignUpResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpResult.swift; sourceTree = "<group>"; };
@@ -425,6 +429,7 @@
 			children = (
 				7AC4950E25EE85B1007199A2 /* AddToBasketRequestFactory.swift */,
 				7AC4951325EECC62007199A2 /* DeleteFromBasketRequestFactory.swift */,
+				7A248ACC25F02F71008670B0 /* PayBasketRequestFactory.swift */,
 				7AC494FF25EE83A3007199A2 /* BasketManager.swift */,
 			);
 			path = Basket;
@@ -435,6 +440,7 @@
 			children = (
 				7AC4950425EE854B007199A2 /* AddToBasketResult.swift */,
 				7AC4950925EE8566007199A2 /* DeleteFromBasketResult.swift */,
+				7A248AD125F02FC0008670B0 /* PayBasketResult.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -612,6 +618,7 @@
 				7A2D669125DD4B1100AFD665 /* LogoutRequestFactory.swift in Sources */,
 				7A35DADA25DA4F28005B4A1F /* RequestFactory.swift in Sources */,
 				7A2D66AD25DD538E00AFD665 /* ChangeUserData.swift in Sources */,
+				7A248AD225F02FC0008670B0 /* PayBasketResult.swift in Sources */,
 				7A70A45225E27F2D003023DA /* Product.swift in Sources */,
 				7A256F3625DC62B7009D5F01 /* SignUpResult.swift in Sources */,
 				7AA5AD6025D9BC5600D9F949 /* AbstractErrorParser.swift in Sources */,
@@ -624,6 +631,7 @@
 				7AC4951425EECC62007199A2 /* DeleteFromBasketRequestFactory.swift in Sources */,
 				7A1C9E0025EBC5B3007A6358 /* Review.swift in Sources */,
 				7A1C9DFB25EBC58F007A6358 /* GetReviewsResult.swift in Sources */,
+				7A248ACD25F02F71008670B0 /* PayBasketRequestFactory.swift in Sources */,
 				7AA5AD7F25D9CA4C00D9F949 /* LoginResult.swift in Sources */,
 				7A1C9DEC25EBB2A7007A6358 /* ApproveReviewResult.swift in Sources */,
 				7A256F3125DC626D009D5F01 /* SignUp.swift in Sources */,
