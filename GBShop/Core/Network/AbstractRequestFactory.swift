@@ -14,12 +14,16 @@ protocol AbstractRequestFactory {
     var queue: DispatchQueue { get }
     
     @discardableResult
-    func request<T: Decodable>(request: URLRequestConvertible, completionHander: @escaping (AFDataResponse<T>) -> Void) -> DataRequest
+    func request<T: Decodable>(request: URLRequestConvertible,
+                               completionHander: @escaping (AFDataResponse<T>) -> Void) -> DataRequest
 }
 
 extension AbstractRequestFactory {
     @discardableResult
-    public func request<T: Decodable>(request: URLRequestConvertible, completionHander: @escaping (AFDataResponse<T>) -> Void) -> DataRequest {
-        return sessionManager.request(request).responseCodable(errorParser: errorParser, queue: queue, completionHandler: completionHander)
+    public func request<T: Decodable>(request: URLRequestConvertible,
+                                      completionHander: @escaping (AFDataResponse<T>) -> Void) -> DataRequest {
+        return sessionManager.request(request).responseCodable(errorParser: errorParser,
+                                                               queue: queue,
+                                                               completionHandler: completionHander)
     }
 }

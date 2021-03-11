@@ -24,7 +24,14 @@ class ChangeUserDataTests: XCTestCase {
         let changeUserData = ChangeUserData(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         let changeUserDataExpectation = expectation(description: "Logout")
         
-        changeUserData.changeUserData(id: "123", userName: "Alice", password: "zxcvb", email: "n@n.n", gender: "female", creditCard: "0000", bio: "...") { (response) in
+        changeUserData.changeUserData(id: "123",
+                                      userName: "Alice",
+                                      password: "zxcvb",
+                                      email: "n@n.n",
+                                      gender: "female",
+                                      creditCard: "0000",
+                                      bio: "..."
+        ) { response in
             switch response.result {
             case .success(let modelResult):
                 XCTAssertEqual(modelResult.result, 1)
@@ -50,7 +57,14 @@ class ChangeUserDataTests: XCTestCase {
         let changeUserData = ChangeUserData(errorParser: ErrorParser(), sessionManager: session, baseUrl: baseUrl)
         let changeUserDataExpectation = expectation(description: "Change user data")
         
-        changeUserData.changeUserData(id: "123", userName: "Alice", password: "zxcvb", email: "n@n.n", gender: "female", creditCard: "0000", bio: "...") { (response) in
+        changeUserData.changeUserData(id: "123",
+                                      userName: "Alice",
+                                      password: "zxcvb",
+                                      email: "n@n.n",
+                                      gender: "female",
+                                      creditCard: "0000",
+                                      bio: "..."
+        ) { response in
             switch response.result {
             case .success(let modelResult):
                 XCTFail("Should have a error \(modelResult)")

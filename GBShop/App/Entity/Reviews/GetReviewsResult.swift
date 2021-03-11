@@ -1,18 +1,18 @@
 //
-//  CatalogDataResult.swift
+//  GetReviewsResult.swift
 //  GBShop
 //
-//  Created by Aksilont on 24.02.2021.
+//  Created by Aksilont on 28.02.2021.
 //
 
 import Foundation
 
-struct CatalogDataResult: Codable {
+struct GetReviewsResult: Codable {
     let pageNumber: Int
-    let products: [Product]
+    let reviews: [Review]
     
     enum CodingKeys: String, CodingKey {
         case pageNumber = "page_number"
-        case products
+        case reviews
     }
 }

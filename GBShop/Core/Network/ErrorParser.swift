@@ -15,6 +15,4 @@ class ErrorParser: AbstractErrorParser {
     func parse(response: HTTPURLResponse?, data: Data?, error: Error?) -> Error? {
         return nil
     }
-    
-    
 }
