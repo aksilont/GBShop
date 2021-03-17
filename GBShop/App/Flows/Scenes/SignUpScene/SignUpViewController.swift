@@ -22,9 +22,9 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     
     var router: (NSObjectProtocol & SignUpRoutingLogic)?
     
-    var contentView: SignUpView {
-        return view as! SignUpView
-    }
+    lazy var contentView: SignUpView = {
+        return SignUpView()
+    }()
     
     // MARK: - Setup
     
@@ -44,7 +44,7 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     
     override func loadView() {
         super.loadView()
-        view = SignUpView()
+        view = contentView
     }
     
     override func viewDidLoad() {

@@ -6,9 +6,13 @@
   Copyright © 2021 Aksilont. All rights reserved.
 */
 
+"Home" = "Home";
+"Profile" = "Profile";
+
 "Login" = "Login";
 "Password" = "Password";
 "Gender" = "Gender";
+"E-mail" = "e-mail";
 "Credit card" = "Credit card";
 "Bio" = "About";
 

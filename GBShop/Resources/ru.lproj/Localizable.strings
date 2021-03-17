@@ -6,9 +6,13 @@
   Copyright © 2021 Aksilont. All rights reserved.
 */
 
+"Home" = "Главная";
+"Profile" = "Профиль";
+
 "Login" = "Логин";
 "Password" = "Пароль";
 "Gender" = "Пол";
+"E-mail" = "e-mail";
 "Credit card" = "Банковская карта";
 "Bio" = "О себе";
 

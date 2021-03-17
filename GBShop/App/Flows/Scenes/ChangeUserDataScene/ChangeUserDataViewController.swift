@@ -22,9 +22,9 @@ class ChangeUserDataViewController: UIViewController, ChangeUserDataDisplayLogic
     
     var router: (NSObjectProtocol & ChangeUserDataRoutingLogic & ChangeUserDataDataPassing)?
     
-    var contentView: ChangeUserDataView {
-        return view as! ChangeUserDataView
-    }
+    lazy var contentView: ChangeUserDataView = {
+        return ChangeUserDataView()
+    }()
     
     // MARK: - Setup
     
@@ -45,7 +45,7 @@ class ChangeUserDataViewController: UIViewController, ChangeUserDataDisplayLogic
     
     override func loadView() {
         super.loadView()
-        view = ChangeUserDataView()
+        view = contentView
     }
     
     override func viewDidLoad() {

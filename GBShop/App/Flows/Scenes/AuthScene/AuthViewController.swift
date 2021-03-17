@@ -22,9 +22,9 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     
     var router: (AuthRoutingLogic & AuthDataPassing)?
     
-    var contentView: AuthView {
-        return view as! AuthView
-    }
+    lazy var contentView: AuthView = {
+        return AuthView()
+    }()
     
     var profile = false
     
@@ -46,7 +46,7 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     
     override func loadView() {
         super.loadView()
-        view = AuthView()
+        view = contentView
     }
     
     override func viewDidLoad() {
