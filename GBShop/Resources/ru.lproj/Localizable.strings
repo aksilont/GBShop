@@ -1,0 +1,19 @@
+/* 
+  Localizable.strings
+  GBShop
+
+  Created by Aksilont on 10.03.2021.
+  Copyright © 2021 Aksilont. All rights reserved.
+*/
+
+"Login" = "Логин";
+"Password" = "Пароль";
+"Gender" = "Пол";
+"Credit card" = "Банковская карта";
+"Bio" = "О себе";
+
+"authButton" = "Войти";
+"signUpButton" = "Регистрация";
+"changeUserDataButton" = "Изменить профиль";
+"confirmButton" = "Подтвердить";
+"logoutButton" = "Выйти";
