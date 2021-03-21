@@ -19,11 +19,19 @@ final class AuthInteractor: AuthBisnessLogic, AuthDataStore {
     
     // MARK: - Private
     
-    private lazy var worker: AuthWorker = AuthWorker()
+    private let requestFactory: RequestFactory
+    private let worker: AuthWorker
     
     // MARK: - Public
     
     var presenter: AuthPresentationLogic?
+    
+    // MARK: - Init
+    
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+        self.worker = AuthWorker(with: requestFactory)
+    }
     
     // MARK: - AuthBisnessLogic
     

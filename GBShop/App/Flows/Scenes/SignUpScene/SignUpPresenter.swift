@@ -21,8 +21,13 @@ class SignUpPresenter: SignUpPresentationLogic {
     // MARK: - SignUpPresentationLogic
     
     func presentData(_ response: SignUpModels.SignUpUser.Response) {
-        let viewModel = SignUpModels.SignUpUser.ViewModel(result: response.result, userMessage: response.userMessage)
-        viewController?.displayData(viewModel)
+        if response.result == 1 {
+            let viewModel = SignUpModels.SignUpUser.ViewModel(success: true, userMessage: response.userMessage)
+            viewController?.displayData(viewModel)
+        } else {
+            viewController?.displayError("Error")
+        }
+        
     }
     
 }

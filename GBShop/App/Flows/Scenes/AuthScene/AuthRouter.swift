@@ -27,13 +27,13 @@ class AuthRouter: AuthRoutingLogic, AuthDataPassing {
     
     func routeToSignUp() {
         guard let viewController = viewController else { fatalError("Fail route to Sign Up") }
-        let signUpVC = SignUpViewController()
+        let signUpVC = SignUpViewController(with: viewController.requestFactory)
         navigateToNext(source: viewController, destination: signUpVC)
     }
     
     func routeToChangeUserData() {
         guard let viewController = viewController else { fatalError("Fail route to Change User Data") }
-        let changeUserDataVC = ChangeUserDataViewController()
+        let changeUserDataVC = ChangeUserDataViewController(with: viewController.requestFactory)
         navigateToNext(source: viewController, destination: changeUserDataVC)
     }
     

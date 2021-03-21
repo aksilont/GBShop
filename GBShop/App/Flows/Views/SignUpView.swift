@@ -12,9 +12,23 @@ class SignUpView: UIView {
     
     // MARK: - Subviews
     
-    private var mainStackView = UIStackView()
+    lazy private var mainStackView: UIStackView = {
+        let viewFactory = ViewFactory()
+        return viewFactory.createStackViewStandart()
+    }()
     
-    private let signUpButton = UIButton()
+    lazy private var signUpButton: UIButton = {
+        let widthButton: CGFloat = 200.0
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("signUpButton", comment: ""), for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .systemPink
+        button.layer.cornerRadius = 15.0
+        button.widthAnchor.constraint(equalToConstant: widthButton).isActive = true
+        button.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
+        return button
+    }()
     var actionSignUpButton: (() -> Void)?
     
     // MARK: - Init
@@ -33,29 +47,9 @@ class SignUpView: UIView {
     
     private func configureUI() {
         backgroundColor = .white
-        
-        addMainStackView()
-        addSignUpButton()
-        setupConstraints()
-    }
-    
-    private func addMainStackView() {
-        let viewFactory = ViewFactory()
-        mainStackView = viewFactory.createStackViewStandart()
         addSubview(mainStackView)
-    }
-    
-    private func addSignUpButton() {
-        let widthButton: CGFloat = 200.0
-        
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.setTitle(NSLocalizedString("signUpButton", comment: ""), for: .normal)
-        signUpButton.setTitleColor(.black, for: .normal)
-        signUpButton.backgroundColor = .systemPink
-        signUpButton.layer.cornerRadius = 15.0
-        signUpButton.widthAnchor.constraint(equalToConstant: widthButton).isActive = true
-        signUpButton.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
         addSubview(signUpButton)
+        setupConstraints()
     }
     
     @objc private func signUpDidTap(sender: UIButton) {

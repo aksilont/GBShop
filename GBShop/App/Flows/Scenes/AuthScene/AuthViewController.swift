@@ -9,17 +9,17 @@ import UIKit
 
 protocol AuthDisplayLogic: AnyObject {
     func displayUser(_ viewModel: AuthModels.LoginUser.ViewModel)
-    func displayLogoutUser(_ viewModel: AuthModels.LogoutUser.ViewModel)
+    func displayLogoutUser(_ message: String)
+    func displayError(_ message: String)
 }
 
 final class AuthViewController: UIViewController, AuthDisplayLogic {
     
-    // MARK: - Private
-    
-    private var interactor: AuthBisnessLogic?
-    
     // MARK: - Public
     
+    let requestFactory: RequestFactory
+    
+    var interactor: AuthBisnessLogic?
     var router: (AuthRoutingLogic & AuthDataPassing)?
     
     lazy var contentView: AuthView = {
@@ -28,18 +28,16 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     
     var profile = false
     
-    // MARK: - Setup
+    // MARK: - Init
     
-    private func setup() {
-        let viewController        = self
-        let interactor            = AuthInteractor()
-        let presenter             = AuthPresenter()
-        let router                = AuthRouter()
-        viewController.interactor = interactor
-        viewController.router     = router
-        interactor.presenter      = presenter
-        presenter.viewController  = viewController
-        router.viewController     = viewController
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+        super.init(nibName: nil, bundle: nil)
+        AuthConfigure.setup(viewController: self, requestFactory: requestFactory)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - View Lifecycle
@@ -51,7 +49,6 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -91,31 +88,23 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     
     // MARK: - AuthDisplayLogic
     
-    func checkToProfile() {
+    func displayUser(_ viewModel: AuthModels.LoginUser.ViewModel) {
+        print(viewModel.user)
         profile = true
         DispatchQueue.main.async {
             self.contentView.createView(profile: true)
         }
     }
     
-    func checkToAuth() {
+    func displayLogoutUser(_ message: String) {
+        print(message)
         profile = false
         DispatchQueue.main.async {
             self.contentView.createView(profile: false)
         }
     }
     
-    func displayUser(_ viewModel: AuthModels.LoginUser.ViewModel) {
-        print(viewModel)
-        if viewModel.result == 1 {
-            checkToProfile()
-        }
-    }
-    
-    func displayLogoutUser(_ viewModel: AuthModels.LogoutUser.ViewModel) {
-        print(viewModel)
-        if viewModel.result == 1 {
-            checkToAuth()
-        }
+    func displayError(_ message: String) {
+        print(message)
     }
 }

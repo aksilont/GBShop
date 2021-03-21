@@ -9,6 +9,30 @@
 import Foundation
 
 class HomeWorker {
-    func doSomeWork() {
+    
+    // MARK: - Private
+    
+    private let requestFactory: RequestFactory
+    
+    // MARK: - Init
+    
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+    }
+    
+    // MARK: - Services
+    
+    func catalogData(pageNumber: String, categoryId: String, completion: @escaping(CatalogDataResult) -> Void) {
+        
+        let catatlogData = requestFactory.makeCatalogDataFactory()
+        
+        catatlogData.getData(pageNumber: pageNumber, categoryId: categoryId) { response in
+            switch response.result {
+            case .success(let model):
+                completion(model)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
     }
 }

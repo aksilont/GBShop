@@ -10,6 +10,7 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="HomeViewController" customModule="GBShop" customModuleProvider="target">
             <connections>
+                <outlet property="tableView" destination="LFe-5R-ad8" id="Whx-Xc-eMg"/>
                 <outlet property="view" destination="mQc-V0-OdV" id="K56-uz-rH0"/>
             </connections>
         </placeholder>
@@ -18,24 +19,22 @@
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
             <subviews>
-                <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="none" translatesAutoresizingMaskIntoConstraints="NO" id="uRo-oT-fAH">
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="LFe-5R-ad8">
                     <rect key="frame" x="0.0" y="44" width="414" height="818"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                    <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="pDa-uk-EMy">
-                        <size key="itemSize" width="128" height="128"/>
-                        <size key="headerReferenceSize" width="0.0" height="0.0"/>
-                        <size key="footerReferenceSize" width="0.0" height="0.0"/>
-                        <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
-                    </collectionViewFlowLayout>
-                </collectionView>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="LpC-4c-1ga"/>
+                        <outlet property="delegate" destination="-1" id="rBI-zp-eDd"/>
+                    </connections>
+                </tableView>
             </subviews>
             <viewLayoutGuide key="safeArea" id="9RT-pb-Ngz"/>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
             <constraints>
-                <constraint firstItem="uRo-oT-fAH" firstAttribute="leading" secondItem="9RT-pb-Ngz" secondAttribute="leading" id="Ixr-wt-Ekl"/>
-                <constraint firstItem="9RT-pb-Ngz" firstAttribute="trailing" secondItem="uRo-oT-fAH" secondAttribute="trailing" id="UZ3-GH-j7y"/>
-                <constraint firstItem="9RT-pb-Ngz" firstAttribute="bottom" secondItem="uRo-oT-fAH" secondAttribute="bottom" id="Zyy-JG-OG9"/>
-                <constraint firstItem="uRo-oT-fAH" firstAttribute="top" secondItem="9RT-pb-Ngz" secondAttribute="top" id="uGg-Jn-5HM"/>
+                <constraint firstItem="9RT-pb-Ngz" firstAttribute="bottom" secondItem="LFe-5R-ad8" secondAttribute="bottom" id="4KZ-W8-3xP"/>
+                <constraint firstItem="LFe-5R-ad8" firstAttribute="top" secondItem="9RT-pb-Ngz" secondAttribute="top" id="GAe-x2-GZG"/>
+                <constraint firstItem="9RT-pb-Ngz" firstAttribute="trailing" secondItem="LFe-5R-ad8" secondAttribute="trailing" id="a01-zj-D7O"/>
+                <constraint firstItem="LFe-5R-ad8" firstAttribute="leading" secondItem="9RT-pb-Ngz" secondAttribute="leading" id="zD6-eC-Jqj"/>
             </constraints>
             <point key="canvasLocation" x="252" y="15"/>
         </view>

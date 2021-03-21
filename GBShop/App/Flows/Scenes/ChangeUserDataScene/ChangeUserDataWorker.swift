@@ -9,7 +9,18 @@
 import Foundation
 
 class ChangeUserDataWorker {
-    let requestFactory = RequestFactory(baseUrl: URL(string: "https://dry-earth-72663.herokuapp.com/")!)
+    
+    // MARK: - Private
+    
+    private let requestFactory: RequestFactory
+    
+    // MARK: - Init
+    
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+    }
+    
+    // MARK: - Services
     
     func changeUserData(userName: String,
                         password: String,

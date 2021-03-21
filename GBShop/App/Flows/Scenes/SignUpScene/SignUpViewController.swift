@@ -10,34 +10,34 @@ import UIKit
 
 protocol SignUpDisplayLogic: AnyObject {
     func displayData(_ viewModel: SignUpModels.SignUpUser.ViewModel)
+    func displayError(_ message: String)
 }
 
 class SignUpViewController: UIViewController, SignUpDisplayLogic {
     
     // MARK: - Private
     
-    private var interactor: SignUpBusinessLogic?
+    private let requestFactory: RequestFactory
 
     // MARK: - Public
     
+    var interactor: SignUpBusinessLogic?
     var router: (NSObjectProtocol & SignUpRoutingLogic)?
     
     lazy var contentView: SignUpView = {
         return SignUpView()
     }()
     
-    // MARK: - Setup
+    // MARK: - Init
     
-    private func setup() {
-        let viewController        = self
-        let interactor            = SignUpInteractor()
-        let presenter             = SignUpPresenter()
-        let router                = SignUpRouter()
-        viewController.interactor = interactor
-        viewController.router     = router
-        interactor.presenter      = presenter
-        presenter.viewController  = viewController
-        router.viewController     = viewController
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+        super.init(nibName: nil, bundle: nil)
+        SignUpConfigure.setup(viewController: self, requestFactory: requestFactory)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
     }
     
     // MARK: - View lifecycle
@@ -49,7 +49,6 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setup()
         setupUI()
     }
     
@@ -73,9 +72,11 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     // MARK: - SignUpDisplayLogic
     
     func displayData(_ viewModel: SignUpModels.SignUpUser.ViewModel) {
-        print(viewModel)
-        if viewModel.result == 1 {
-            router?.routeToAuth()
-        }
+        print(viewModel.userMessage ?? "")
+        router?.routeToAuth()
+    }
+    
+    func displayError(_ message: String) {
+        print(message)
     }
 }

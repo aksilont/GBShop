@@ -24,7 +24,8 @@ enum ChangeUserDataModels {
             let result: Int
         }
         struct ViewModel {
-            let result: Int
+            let success: Bool
+            let message: String?
         }
     }
     

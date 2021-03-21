@@ -16,17 +16,24 @@ class SignUpInteractor: SignUpBusinessLogic {
     
     // MARK: - Private
     
-    private var worker: SignUpWorker?
+    private let requestFactory: RequestFactory
+    private let worker: SignUpWorker
     
     // MARK: - Public
     
     var presenter: SignUpPresentationLogic?
     
+    // MARK: - Init
+    
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+        self.worker = SignUpWorker(with: requestFactory)
+    }
+    
     // MARK: - SignUpBusinessLogic
     
     func signUp(request: SignUpModels.SignUpUser.Request) {
-        worker = SignUpWorker()
-        worker?.signUpUser(
+        worker.signUpUser(
             userName: request.userName,
             password: request.password,
             email: request.email,

@@ -10,12 +10,20 @@ import UIKit
 
 enum HomeModels {
     
-    enum Something {
+    enum CatalogData {
         struct Request {
+            let pageNumber: String
+            let categoryId: String
         }
         struct Response {
+            let pageNumber: Int
+            let products: [Product]
         }
         struct ViewModel {
+            let success: Bool
+            let pageNumber: Int
+            let products: [Product]
+            let message: String?
         }
     }
     

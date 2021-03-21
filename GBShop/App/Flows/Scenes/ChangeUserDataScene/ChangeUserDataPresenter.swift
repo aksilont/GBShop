@@ -21,7 +21,12 @@ class ChangeUserDataPresenter: ChangeUserDataPresentationLogic {
     // MARK: - ChangeUserDataPresentationLogic
     
     func presentData(response: ChangeUserDataModels.ChangeUserData.Response) {
-        let viewModel = ChangeUserDataModels.ChangeUserData.ViewModel(result: response.result)
-        viewController?.displayData(viewModel: viewModel)
+        if response.result == 1 {
+            let viewModel = ChangeUserDataModels.ChangeUserData.ViewModel(success: true,
+                                                                          message: "Success to change user profile")
+            viewController?.displayData(viewModel)
+        } else {
+            viewController?.displayError("Error")
+        }
     }
 }

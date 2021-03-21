@@ -10,6 +10,17 @@ import UIKit
 
 class TabBarController: UITabBarController {
 
+    let requestFactory: RequestFactory
+    
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+        super.init(nibName: nil, bundle: nil)
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -20,14 +31,16 @@ class TabBarController: UITabBarController {
     private func createViewControllers() -> [UIViewController] {
         var controllers = [UIViewController]()
         
-        let homeViewController = HomeViewController(nibName: "HomeViewController", bundle: nil)
+        let homeViewController = HomeViewController(nibName: "HomeViewController",
+                                                    bundle: nil,
+                                                    with: requestFactory)
         homeViewController.title = NSLocalizedString("Home", comment: "")
         homeViewController.tabBarItem = UITabBarItem.init(title: homeViewController.title,
                                                           image: UIImage(systemName: "house.circle"),
                                                           selectedImage: UIImage(systemName: "house.circle.fill"))
         controllers.append(homeViewController)
         
-        let authViewController = AuthViewController()
+        let authViewController = AuthViewController(with: requestFactory)
         authViewController.title = NSLocalizedString("Profile", comment: "")
         authViewController.tabBarItem = UITabBarItem.init(title: authViewController.title,
                                                           image: UIImage(systemName: "person.circle"),

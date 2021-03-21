@@ -21,12 +21,19 @@ final class AuthPresenter: AuthPresentationLogic {
     // MARK: - AuthPresentationLogic
     
     func presentUser(_ response: AuthModels.LoginUser.Response) {
-        let viewModel = AuthModels.LoginUser.ViewModel(result: response.result, user: response.user)
-        viewController?.displayUser(viewModel)
+        if response.result == 1 {
+            let viewModel = AuthModels.LoginUser.ViewModel(success: true, user: response.user)
+            viewController?.displayUser(viewModel)
+        } else {
+            viewController?.displayError("Error to login")
+        }
     }
     
     func presentLogoutUser( _ response: AuthModels.LogoutUser.Response) {
-        let viewModel = AuthModels.LogoutUser.ViewModel(result: response.result)
-        viewController?.displayLogoutUser(viewModel)
+        if response.result == 1 {
+            viewController?.displayLogoutUser("Logout success")
+        } else {
+            viewController?.displayError("Error to logout")
+        }
     }
 }

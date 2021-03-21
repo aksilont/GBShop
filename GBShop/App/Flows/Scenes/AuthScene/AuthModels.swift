@@ -19,7 +19,7 @@ enum AuthModels {
             var user: User
         }
         struct ViewModel {
-            let result: Int
+            let success: Bool
             let user: User
         }
     }
@@ -32,7 +32,8 @@ enum AuthModels {
             var result: Int
         }
         struct ViewModel {
-            let result: Int
+            let success: Bool
+            let message: String?
         }
     }
     

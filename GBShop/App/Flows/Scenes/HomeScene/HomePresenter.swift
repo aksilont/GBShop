@@ -9,7 +9,7 @@
 import UIKit
 
 protocol HomePresentationLogic {
-    func presentSomething(response: HomeModels.Something.Response)
+    func presentCatalogData(response: HomeModels.CatalogData.Response)
 }
 
 class HomePresenter: HomePresentationLogic {
@@ -20,8 +20,16 @@ class HomePresenter: HomePresentationLogic {
     
     // MARK: - HomePresentationLogic
     
-    func presentSomething(response: HomeModels.Something.Response) {
-        let viewModel = HomeModels.Something.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentCatalogData(response: HomeModels.CatalogData.Response) {
+        if response.products.isEmpty {
+            viewController?.displayError("Error")
+        } else {
+            let viewModel = HomeModels.CatalogData.ViewModel(success: true,
+                                                             pageNumber: response.pageNumber,
+                                                             products: response.products,
+                                                             message: "Success to get catalog data")
+            viewController?.displayCatalogData(viewModel)
+        }
+        
     }
 }

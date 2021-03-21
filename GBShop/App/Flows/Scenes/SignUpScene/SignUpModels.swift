@@ -25,8 +25,8 @@ enum SignUpModels {
             let userMessage: String
         }
         struct ViewModel {
-            let result: Int
-            let userMessage: String
+            let success: Bool
+            let userMessage: String?
         }
     }
     

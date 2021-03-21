@@ -9,7 +9,7 @@
 import Foundation
 
 protocol HomeBusinessLogic {
-    func doSomething(request: HomeModels.Something.Request)
+    func catalogData(request: HomeModels.CatalogData.Request)
 }
 
 protocol HomeDataStore {
@@ -17,18 +17,28 @@ protocol HomeDataStore {
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
+    // MARK: - Private
+    
+    private let requestFactory: RequestFactory
+    private let worker: HomeWorker
+    
     // MARK: - Public
     
     var presenter: HomePresentationLogic?
-    var worker: HomeWorker?
     
+    // MARK: - Init
+    
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+        self.worker = HomeWorker(with: requestFactory)
+    }
     // MARK: - HomeBusinessLogic
     
-    func doSomething(request: HomeModels.Something.Request) {
-        worker = HomeWorker()
-        worker?.doSomeWork()
-        
-        let response = HomeModels.Something.Response()
-        presenter?.presentSomething(response: response)
+    func catalogData(request: HomeModels.CatalogData.Request) {
+        worker.catalogData(pageNumber: request.pageNumber, categoryId: request.categoryId, completion: { modelResult in
+            let response = HomeModels.CatalogData.Response(pageNumber: modelResult.pageNumber,
+                                                           products: modelResult.products)
+            self.presenter?.presentCatalogData(response: response)
+        })
     }
 }

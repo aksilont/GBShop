@@ -10,25 +10,82 @@ import UIKit
 
 class AuthView: UIView {
     
-    // MARK: - Auth elements
+    // MARK: - Auth subviews
     
-    private let userNameTextField = UITextField()
-    private let passwordTextField = UITextField()
+    lazy private var userNameTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        textField.textColor = .black
+        textField.placeholder = NSLocalizedString("Login", comment: "")
+        return textField
+    }()
     
-    private let authButton = UIButton()
+    lazy private var passwordTextField: UITextField = {
+        let textField = UITextField()
+        textField.translatesAutoresizingMaskIntoConstraints = false
+        textField.borderStyle = .roundedRect
+        textField.textColor = .black
+        textField.placeholder = NSLocalizedString("Password", comment: "")
+        return textField
+    }()
+    
+    lazy private var authButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("authButton", comment: ""), for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .systemGreen
+        button.layer.cornerRadius = 15.0
+        button.addTarget(self, action: #selector(authDidTap), for: .touchUpInside)
+        return button
+    }()
     var actionAuthButton: ((String, String) -> Void)?
     
-    private let signUpButton = UIButton()
+    lazy private var signUpButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("signUpButton", comment: ""), for: .normal)
+        button.setTitleColor(.systemGray, for: .normal)
+        button.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
+        return button
+    }()
     var actionSignUpButton: (() -> Void)?
     
-    // MARK: - Profile elments
+    // MARK: - Profile subviews
     
-    private let helloLabel = UILabel()
+    lazy private var helloLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textAlignment = .center
+        label.text = NSLocalizedString("Hello user!", comment: "")
+        return label
+    }()
     
-    let changeUserDataButton = UIButton()
+    lazy private var changeUserDataButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("changeUserDataButton", comment: ""), for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .systemOrange
+        button.layer.cornerRadius = 15.0
+        button.widthAnchor.constraint(equalToConstant: 200.0).isActive = true
+        button.addTarget(self, action: #selector(changeUserDataDidTap), for: .touchUpInside)
+        return button
+    }()
     var actionChangeUserDataButton: (() -> Void)?
     
-    let logoutButton = UIButton()
+    lazy private var logoutButton: UIButton = {
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("logoutButton", comment: ""), for: .normal)
+        button.setTitleColor(.black, for: .normal)
+        button.backgroundColor = .systemTeal
+        button.layer.cornerRadius = 15.0
+        button.widthAnchor.constraint(equalToConstant: 200.0).isActive = true
+        button.addTarget(self, action: #selector(logoutDidTap), for: .touchUpInside)
+        return button
+    }()
     var actionLogoutButton: (() -> Void)?
     
     var userName: String {
@@ -66,50 +123,16 @@ class AuthView: UIView {
     
     private func configureUI() {
         backgroundColor = .white
-        addUserNameBlock()
-        addPasswordBlock()
-        addAuthButton()
-        addSignUpButton()
-        setupConstraints()
-    }
-    
-    private func addUserNameBlock() {
-        userNameTextField.translatesAutoresizingMaskIntoConstraints = false
-        userNameTextField.borderStyle = .roundedRect
-        userNameTextField.textColor = .black
-        userNameTextField.placeholder = NSLocalizedString("Login", comment: "")
         addSubview(userNameTextField)
-    }
-    
-    private func addPasswordBlock() {
-        passwordTextField.translatesAutoresizingMaskIntoConstraints = false
-        passwordTextField.borderStyle = .roundedRect
-        passwordTextField.textColor = .black
-        passwordTextField.placeholder = NSLocalizedString("Password", comment: "")
         addSubview(passwordTextField)
-    }
-
-    private func addAuthButton() {
-        authButton.translatesAutoresizingMaskIntoConstraints = false
-        authButton.setTitle(NSLocalizedString("authButton", comment: ""), for: .normal)
-        authButton.setTitleColor(.black, for: .normal)
-        authButton.backgroundColor = .systemGreen
-        authButton.layer.cornerRadius = 15.0
-        authButton.addTarget(self, action: #selector(authDidTap), for: .touchUpInside)
         addSubview(authButton)
+        addSubview(signUpButton)
+        setupConstraints()
     }
     
     @objc private func authDidTap(sender: UIButton) {
         guard let actionAuthButton = actionAuthButton else { return }
         actionAuthButton(userName, password)
-    }
-    
-    private func addSignUpButton() {
-        signUpButton.translatesAutoresizingMaskIntoConstraints = false
-        signUpButton.setTitle(NSLocalizedString("signUpButton", comment: ""), for: .normal)
-        signUpButton.setTitleColor(.systemGray, for: .normal)
-        signUpButton.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
-        addSubview(signUpButton)
     }
     
     @objc private func signUpDidTap(sender: UIButton) {
@@ -146,44 +169,15 @@ class AuthView: UIView {
     
     private func configureUIProfile() {
         backgroundColor = .white
-        addHelloLabel()
-        addChangeUserDataButton()
-        addLogoutButton()
-        setupConstraintsProfile()
-    }
-    
-    private func addHelloLabel() {
-        helloLabel.translatesAutoresizingMaskIntoConstraints = false
-        helloLabel.textAlignment = .center
-        helloLabel.text = NSLocalizedString("Hello user!", comment: "")
         addSubview(helloLabel)
-    }
-    
-    private func addChangeUserDataButton() {
-        changeUserDataButton.translatesAutoresizingMaskIntoConstraints = false
-        changeUserDataButton.setTitle(NSLocalizedString("changeUserDataButton", comment: ""), for: .normal)
-        changeUserDataButton.setTitleColor(.black, for: .normal)
-        changeUserDataButton.backgroundColor = .systemOrange
-        changeUserDataButton.layer.cornerRadius = 15.0
-        changeUserDataButton.widthAnchor.constraint(equalToConstant: 200.0).isActive = true
-        changeUserDataButton.addTarget(self, action: #selector(changeUserDataDidTap), for: .touchUpInside)
         addSubview(changeUserDataButton)
+        addSubview(logoutButton)
+        setupConstraintsProfile()
     }
     
     @objc private func changeUserDataDidTap(sender: UIButton) {
         guard let actionChangeUserDataButton = actionChangeUserDataButton else { return }
         actionChangeUserDataButton()
-    }
-    
-    private func addLogoutButton() {
-        logoutButton.translatesAutoresizingMaskIntoConstraints = false
-        logoutButton.setTitle(NSLocalizedString("logoutButton", comment: ""), for: .normal)
-        logoutButton.setTitleColor(.black, for: .normal)
-        logoutButton.backgroundColor = .systemTeal
-        logoutButton.layer.cornerRadius = 15.0
-        logoutButton.widthAnchor.constraint(equalToConstant: 200.0).isActive = true
-        logoutButton.addTarget(self, action: #selector(logoutDidTap), for: .touchUpInside)
-        addSubview(logoutButton)
     }
     
     @objc private func logoutDidTap(sender: UIButton) {

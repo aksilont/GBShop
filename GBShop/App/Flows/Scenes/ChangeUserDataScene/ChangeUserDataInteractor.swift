@@ -19,17 +19,24 @@ class ChangeUserDataInteractor: ChangeUserDataBusinessLogic, ChangeUserDataDataS
     
     // MARK: - Private
     
-    private var worker: ChangeUserDataWorker?
+    private let requestFactory: RequestFactory
+    private let worker: ChangeUserDataWorker
     
     // MARK: - Public
     
     var presenter: ChangeUserDataPresentationLogic?
     
+    // MARK: - Init
+    
+    init(with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
+        self.worker = ChangeUserDataWorker(with: requestFactory)
+    }
+    
     // MARK: - ChangeUserDataBusinessLogic
     
     func changeUserData(request: ChangeUserDataModels.ChangeUserData.Request) {
-        worker = ChangeUserDataWorker()
-        worker?.changeUserData(
+        worker.changeUserData(
             userName: request.userName,
             password: request.password,
             email: request.email,

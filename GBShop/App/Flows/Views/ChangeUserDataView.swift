@@ -12,9 +12,24 @@ class ChangeUserDataView: UIView {
     
     // MARK: - Subviews
     
-    private var mainStackView = UIStackView()
+    lazy private var mainStackView: UIStackView = {
+        let viewFactory = ViewFactory()
+        return viewFactory.createStackViewStandart()
+    }()
     
-    private let confirmButton = UIButton()
+    lazy private var confirmButton: UIButton = {
+        let widthButton: CGFloat = 200.0
+        let button = UIButton()
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.setTitle(NSLocalizedString("confirmButton", comment: ""), for: .normal)
+        button.setTitleColor(.systemGray6, for: .normal)
+        button.backgroundColor = .systemIndigo
+        button.layer.cornerRadius = 15.0
+        button.widthAnchor.constraint(equalToConstant: widthButton).isActive = true
+        button.addTarget(self, action: #selector(confirmDidTap), for: .touchUpInside)
+        return button
+    }()
+
     var actionConfirmButton: (() -> Void)?
     
     // MARK: - Init
@@ -33,29 +48,9 @@ class ChangeUserDataView: UIView {
     
     private func configureUI() {
         backgroundColor = .white
-        
-        addMainStackView()
-        addChangeUserDataButton()
-        setupConstraints()
-    }
-    
-    private func addMainStackView() {
-        let viewFactory = ViewFactory()
-        mainStackView = viewFactory.createStackViewStandart()
         addSubview(mainStackView)
-    }
-    
-    private func addChangeUserDataButton() {
-        let widthButton: CGFloat = 200.0
-        
-        confirmButton.translatesAutoresizingMaskIntoConstraints = false
-        confirmButton.setTitle(NSLocalizedString("confirmButton", comment: ""), for: .normal)
-        confirmButton.setTitleColor(.systemGray6, for: .normal)
-        confirmButton.backgroundColor = .systemIndigo
-        confirmButton.layer.cornerRadius = 15.0
-        confirmButton.widthAnchor.constraint(equalToConstant: widthButton).isActive = true
-        confirmButton.addTarget(self, action: #selector(confirmDidTap), for: .touchUpInside)
         addSubview(confirmButton)
+        setupConstraints()
     }
     
     @objc private func confirmDidTap(sender: UIButton) {
