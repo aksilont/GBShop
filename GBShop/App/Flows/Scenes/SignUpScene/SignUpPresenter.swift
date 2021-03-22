@@ -22,7 +22,7 @@ class SignUpPresenter: SignUpPresentationLogic {
     
     func presentData(_ response: SignUpModels.SignUpUser.Response) {
         if response.result == 1 {
-            let viewModel = SignUpModels.SignUpUser.ViewModel(success: true, userMessage: response.userMessage)
+            let viewModel = SignUpModels.SignUpUser.ViewModel(success: true, messsage: response.userMessage)
             viewController?.displayData(viewModel)
         } else {
             viewController?.displayError("Error")

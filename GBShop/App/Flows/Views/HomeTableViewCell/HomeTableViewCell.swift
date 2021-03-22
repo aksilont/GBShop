@@ -22,8 +22,8 @@ class HomeTableViewCell: UITableViewCell {
     }
     
     func setup(product: Product) {
-        productNameLabel.text = "Наименование: \(product.name)"
-        productPrice.text = "Цена: \(product.price)"
+        productNameLabel.text = NSLocalizedString("GoodsName", comment: "").appending(": \(product.name)")
+        productPrice.text = NSLocalizedString("GoodsPrice", comment: "").appending(": \(product.price)")
     }
     
 }

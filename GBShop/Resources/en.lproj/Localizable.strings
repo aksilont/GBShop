@@ -9,6 +9,10 @@
 "Home" = "Home";
 "Profile" = "Profile";
 
+"Goods" = "Goods";
+"GoodsName" = "Name";
+"GoodsPrice" = "Price";
+
 "Login" = "Login";
 "Password" = "Password";
 "Gender" = "Gender";

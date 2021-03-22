@@ -72,7 +72,7 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     // MARK: - SignUpDisplayLogic
     
     func displayData(_ viewModel: SignUpModels.SignUpUser.ViewModel) {
-        print(viewModel.userMessage ?? "")
+        print(viewModel.messsage ?? "")
         router?.routeToAuth()
     }
     

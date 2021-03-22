@@ -108,6 +108,8 @@ class AuthView: UIView {
         super.init(coder: aDecoder)
     }
     
+    // MARK: - UI Initialize
+    
     func createView(profile: Bool = false) {
         for elements in subviews {
             elements.removeFromSuperview()

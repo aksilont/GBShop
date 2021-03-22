@@ -9,6 +9,10 @@
 "Home" = "Главная";
 "Profile" = "Профиль";
 
+"Goods" = "Товары";
+"GoodsName" = "Наименование";
+"GoodsPrice" = "Цена";
+
 "Login" = "Логин";
 "Password" = "Пароль";
 "Gender" = "Пол";

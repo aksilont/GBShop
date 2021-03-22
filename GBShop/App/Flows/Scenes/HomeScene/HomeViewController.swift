@@ -94,7 +94,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return "Товары"
+        return NSLocalizedString("Goods", comment: "")
     }
     
 }
