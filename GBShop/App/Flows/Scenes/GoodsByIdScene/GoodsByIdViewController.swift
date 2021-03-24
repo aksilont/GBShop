@@ -15,14 +15,19 @@ protocol GoodsByIdDisplayLogic: AnyObject {
 
 class GoodsByIdViewController: UIViewController, GoodsByIdDisplayLogic {
     
-    // MARK: - Private
-    
-    private var requestFactory: RequestFactory
-    
     // MARK: - Public
+    
+    var requestFactory: RequestFactory
     
     var interactor: GoodsByIdBusinessLogic?
     var router: (NSObjectProtocol & GoodsByIdRoutingLogic & GoodsByIdDataPassing)?
+    
+    // MARK: - IBOutlets
+    
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptionLabel: UILabel!
+    @IBOutlet weak var priceLabel: UILabel!
     
     // MARK: - Init
     
@@ -40,7 +45,24 @@ class GoodsByIdViewController: UIViewController, GoodsByIdDisplayLogic {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        navigationItem.rightBarButtonItems = [
+            UIBarButtonItem(image: UIImage(systemName: "cart.badge.plus"),
+                            style: .plain,
+                            target: self,
+                            action: #selector(addToBasket))
+        ]
+        
         getGoodsById()
+    }
+    
+    @objc func addToBasket(_ sender: UIButton) {
+    }
+    
+    // MARK: - IBAction
+    
+    @IBAction func getReviewsDidTap() {
+        router?.routeToGetReviews()
     }
     
     // MARK: - Get goods by Id
@@ -53,6 +75,14 @@ class GoodsByIdViewController: UIViewController, GoodsByIdDisplayLogic {
     // MARK: - GoodsByIdDisplayLogic
     
     func displayGoodsById(_ viewModel: GoodsByIdModels.GoodsById.ViewModel) {
+        DispatchQueue.main.async {
+            self.title = viewModel.name
+            self.imageView.image = UIImage(systemName: "photo.tv")
+            self.nameLabel.text = viewModel.name
+            self.descriptionLabel.text = viewModel.description
+            self.priceLabel.text = "Price: ".appending("\(viewModel.price)")
+        }
+
         print(viewModel)
     }
     

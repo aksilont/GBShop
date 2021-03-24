@@ -10,6 +10,10 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="GoodsByIdViewController" customModule="GBShop" customModuleProvider="target">
             <connections>
+                <outlet property="descriptionLabel" destination="1eT-Uo-aJP" id="tQ6-7N-x1j"/>
+                <outlet property="imageView" destination="bW5-Kn-KU7" id="ZOl-dd-QLL"/>
+                <outlet property="nameLabel" destination="S6Y-FX-Bqd" id="sSr-d6-Zu7"/>
+                <outlet property="priceLabel" destination="vqN-XF-ihW" id="e7Z-Zp-cxT"/>
                 <outlet property="view" destination="iN0-l3-epB" id="bej-fX-QtW"/>
             </connections>
         </placeholder>
@@ -17,14 +21,86 @@
         <view contentMode="scaleToFill" id="iN0-l3-epB">
             <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="photo.tv" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="bW5-Kn-KU7">
+                    <rect key="frame" x="30" y="54.5" width="354" height="264.5"/>
+                    <color key="tintColor" systemColor="placeholderTextColor"/>
+                    <constraints>
+                        <constraint firstAttribute="width" secondItem="bW5-Kn-KU7" secondAttribute="height" multiplier="4:3" id="CAW-RE-Wcc"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S6Y-FX-Bqd">
+                    <rect key="frame" x="153" y="369.5" width="108.5" height="48"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="40"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Description" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1eT-Uo-aJP">
+                    <rect key="frame" x="157" y="447.5" width="100.5" height="24"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Price" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vqN-XF-ihW">
+                    <rect key="frame" x="180" y="521.5" width="54.5" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <stackView opaque="NO" contentMode="scaleToFill" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Rbf-So-35p">
+                    <rect key="frame" x="123.5" y="581.5" width="167.5" height="42"/>
+                    <subviews>
+                        <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="star.leadinghalf.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="pEJ-yv-5EN">
+                            <rect key="frame" x="0.0" y="9.5" width="22" height="22"/>
+                            <constraints>
+                                <constraint firstAttribute="width" secondItem="pEJ-yv-5EN" secondAttribute="height" id="ONr-MU-g2f"/>
+                            </constraints>
+                        </imageView>
+                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4.5" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ktW-qq-fYN">
+                            <rect key="frame" x="32" y="6" width="36.5" height="30"/>
+                            <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                            <nil key="textColor"/>
+                            <nil key="highlightedColor"/>
+                        </label>
+                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="k1D-Oa-iNL">
+                            <rect key="frame" x="78.5" y="0.0" width="89" height="42"/>
+                            <fontDescription key="fontDescription" type="italicSystem" pointSize="25"/>
+                            <state key="normal" title="Reviews">
+                                <color key="titleColor" systemColor="linkColor"/>
+                            </state>
+                            <connections>
+                                <action selector="getReviewsDidTap" destination="-1" eventType="touchUpInside" id="dPc-Tz-LCJ"/>
+                            </connections>
+                        </button>
+                    </subviews>
+                </stackView>
+            </subviews>
             <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
-            <color key="backgroundColor" systemColor="systemGreenColor"/>
-            <point key="canvasLocation" x="139" y="137"/>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstItem="bW5-Kn-KU7" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" constant="10" id="46V-dG-7Bs"/>
+                <constraint firstItem="Rbf-So-35p" firstAttribute="top" secondItem="vqN-XF-ihW" secondAttribute="bottom" constant="30" id="4N2-4A-R7o"/>
+                <constraint firstItem="1eT-Uo-aJP" firstAttribute="top" secondItem="S6Y-FX-Bqd" secondAttribute="bottom" constant="30" id="SJa-sA-yAc"/>
+                <constraint firstItem="vqN-XF-ihW" firstAttribute="top" secondItem="1eT-Uo-aJP" secondAttribute="bottom" constant="50" id="VxI-9I-Ssb"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="bW5-Kn-KU7" secondAttribute="trailing" constant="30" id="WrL-K9-Nqm"/>
+                <constraint firstItem="bW5-Kn-KU7" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" constant="30" id="bFy-FP-Coj"/>
+                <constraint firstItem="S6Y-FX-Bqd" firstAttribute="top" secondItem="bW5-Kn-KU7" secondAttribute="bottom" constant="50" id="dgo-a8-RKm"/>
+                <constraint firstItem="vqN-XF-ihW" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="e2J-Rt-bOL"/>
+                <constraint firstItem="Rbf-So-35p" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ioa-gN-zYM"/>
+                <constraint firstItem="1eT-Uo-aJP" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ri8-h7-uwW"/>
+                <constraint firstItem="S6Y-FX-Bqd" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="xzc-PP-9Ya"/>
+            </constraints>
+            <point key="canvasLocation" x="137.68115942028987" y="136.60714285714286"/>
         </view>
     </objects>
     <resources>
-        <systemColor name="systemGreenColor">
-            <color red="0.20392156862745098" green="0.7803921568627451" blue="0.34901960784313724" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <image name="photo.tv" catalog="system" width="128" height="97"/>
+        <image name="star.leadinghalf.fill" catalog="system" width="128" height="116"/>
+        <systemColor name="linkColor">
+            <color red="0.0" green="0.47843137254901963" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+        <systemColor name="placeholderTextColor">
+            <color red="0.23529411764705882" green="0.23529411764705882" blue="0.2627450980392157" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
         </systemColor>
     </resources>
 </document>

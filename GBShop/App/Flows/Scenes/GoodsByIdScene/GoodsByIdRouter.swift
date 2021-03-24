@@ -9,6 +9,7 @@
 import UIKit
 
 @objc protocol GoodsByIdRoutingLogic {
+    func routeToGetReviews()
 }
 
 protocol GoodsByIdDataPassing {
@@ -22,4 +23,31 @@ class GoodsByIdRouter: NSObject, GoodsByIdRoutingLogic, GoodsByIdDataPassing {
     weak var viewController: GoodsByIdViewController?
     var dataStore: GoodsByIdDataStore?
     
+    // MARK: - GoodsByIdRoutingLogic
+    
+    func routeToGetReviews() {
+        guard
+            let viewController = viewController,
+            let goodsByIdDS = dataStore
+        else { fatalError("Fail route to GetReviews") }
+        
+        let getReviewsVC = GetReviewsViewController(with: viewController.requestFactory)
+        guard var getReviewsDS = getReviewsVC.router?.dataStore
+        else { fatalError("Fail to get data store GetReviews") }
+        
+        passDataToGetReviews(source: goodsByIdDS, destination: &getReviewsDS)
+        navigateToGetReviews(source: viewController, destination: getReviewsVC)
+    }
+    
+    // MARK: - Navigation
+    
+    private func navigateToGetReviews(source: GoodsByIdViewController, destination: UIViewController) {
+        source.navigationController?.pushViewController(destination, animated: true)
+    }
+    
+    // MARK: - Passing data
+    
+    private func passDataToGetReviews(source: GoodsByIdDataStore, destination: inout GetReviewsDataStore) {
+        destination.productId = source.productId
+    }
 }

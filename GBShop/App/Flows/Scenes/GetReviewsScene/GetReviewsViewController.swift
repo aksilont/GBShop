@@ -27,7 +27,7 @@ class GetReviewsViewController: UIViewController, GetReviewsDisplayLogic {
     var router: (NSObjectProtocol & GetReviewsRoutingLogic & GetReviewsDataPassing)?
     
     lazy var contentView: GetReviewsView = {
-        return GetReviewsView()
+        return GetReviewsView(frame: .zero, delegateGetReviews: self)
     }()
     
     // MARK: - Init
@@ -42,22 +42,15 @@ class GetReviewsViewController: UIViewController, GetReviewsDisplayLogic {
         fatalError("init(coder:) has not been implemented")
     }
     
-    // MARK: - Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
     // MARK: - View Lifecycle
+    
+    override func loadView() {
+        super.loadView()
+        view = contentView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view = contentView
         getReviews()
     }
     
@@ -72,9 +65,27 @@ class GetReviewsViewController: UIViewController, GetReviewsDisplayLogic {
     
     func displayReviews(_ viewModel: GetReviewsModels.GetReviews.ViewModel) {
         print(viewModel)
+        reviews = viewModel.reviews
+        DispatchQueue.main.async {
+            self.contentView.reloadTableData()
+        }
     }
     
     func displayError(_ message: String) {
         print(message)
+    }
+}
+
+extension GetReviewsViewController: GetReviewsTableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return reviews.count
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CellReview", for: indexPath)
+        cell.textLabel?.text = reviews[indexPath.row].text
+        cell.imageView?.image = UIImage(systemName: "square.and.pencil")
+        return cell
     }
 }
