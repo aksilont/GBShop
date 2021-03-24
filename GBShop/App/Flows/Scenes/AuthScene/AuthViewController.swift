@@ -66,7 +66,7 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     }
     
     private func setupUI() {
-        navigationController?.navigationBar.isHidden = true
+//        navigationController?.navigationBar.isHidden = true
         
         contentView.createView(profile: profile)
         

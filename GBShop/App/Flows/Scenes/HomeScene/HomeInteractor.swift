@@ -13,6 +13,7 @@ protocol HomeBusinessLogic {
 }
 
 protocol HomeDataStore {
+    var products: [Product]? { get }
 }
 
 class HomeInteractor: HomeBusinessLogic, HomeDataStore {
@@ -26,6 +27,8 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     var presenter: HomePresentationLogic?
     
+    var products: [Product]?
+    
     // MARK: - Init
     
     init(with requestFactory: RequestFactory) {
@@ -36,6 +39,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
     
     func catalogData(request: HomeModels.CatalogData.Request) {
         worker.catalogData(pageNumber: request.pageNumber, categoryId: request.categoryId, completion: { modelResult in
+            self.products = modelResult.products
             let response = HomeModels.CatalogData.Response(pageNumber: modelResult.pageNumber,
                                                            products: modelResult.products)
             self.presenter?.presentCatalogData(response: response)

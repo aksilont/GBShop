@@ -38,7 +38,15 @@ class TabBarController: UITabBarController {
         homeViewController.tabBarItem = UITabBarItem.init(title: homeViewController.title,
                                                           image: UIImage(systemName: "house.circle"),
                                                           selectedImage: UIImage(systemName: "house.circle.fill"))
-        controllers.append(homeViewController)
+        let naviHomeViewController = UINavigationController(rootViewController: homeViewController)
+        controllers.append(naviHomeViewController)
+        
+//        let getReviewsController = GetReviewsViewController(with: requestFactory)
+//        getReviewsController.title = NSLocalizedString("Reviews", comment: "")
+//        getReviewsController.tabBarItem = UITabBarItem.init(title: getReviewsController.title,
+//                                                            image: UIImage(systemName: "book.circle"),
+//                                                            selectedImage: UIImage(systemName: "book.circle.fill"))
+//        controllers.append(getReviewsController)
         
         let authViewController = AuthViewController(with: requestFactory)
         authViewController.title = NSLocalizedString("Profile", comment: "")

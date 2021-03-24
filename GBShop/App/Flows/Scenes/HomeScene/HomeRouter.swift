@@ -9,6 +9,7 @@
 import UIKit
 
 @objc protocol HomeRoutingLogic {
+    func routeToGoodsById(productId: Int)
 }
 
 protocol HomeDataPassing {
@@ -21,4 +22,26 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     
     weak var viewController: HomeViewController?
     var dataStore: HomeDataStore?
+    
+    // MARK: - HomeRoutingLogic
+    
+    func routeToGoodsById(productId: Int) {
+        guard let viewController = viewController else { fatalError("Fail route to GetReviews") }
+        
+        let goodsByIdVC = GoodsByIdViewController(nibName: "GoodsByIdViewController",
+                                                    bundle: nil,
+                                                    with: viewController.requestFactory)
+        guard var goodsByIdDS = goodsByIdVC.router?.dataStore
+        else { fatalError("Fail to get data store GetReviews") }
+        
+        goodsByIdDS.productId = productId
+        
+        navigateToNext(source: viewController, destination: goodsByIdVC)
+    }
+    
+    // MARK: - Navigation
+    
+    private func navigateToNext(source: HomeViewController, destination: UIViewController) {
+        source.navigationController?.pushViewController(destination, animated: true)
+    }
 }

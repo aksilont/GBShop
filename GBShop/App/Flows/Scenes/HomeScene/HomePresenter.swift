@@ -30,6 +30,5 @@ class HomePresenter: HomePresentationLogic {
                                                              message: "Success to get catalog data")
             viewController?.displayCatalogData(viewModel)
         }
-        
     }
 }

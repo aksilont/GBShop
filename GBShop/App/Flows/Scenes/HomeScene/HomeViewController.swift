@@ -17,11 +17,11 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     // MARK: - Private
     
-    private var requestFactory: RequestFactory
-    
     private var products: [Product] = []
     
     // MARK: - Public
+    
+    var requestFactory: RequestFactory
     
     var interactor: HomeBusinessLogic?
     var router: (NSObjectProtocol & HomeRoutingLogic & HomeDataPassing)?
@@ -38,17 +38,6 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    // MARK: - Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
     }
     
     // MARK: - View Lifecycle
@@ -95,6 +84,10 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
         return NSLocalizedString("Goods", comment: "")
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        self.router?.routeToGoodsById(productId: products[indexPath.row].id)
     }
     
 }
