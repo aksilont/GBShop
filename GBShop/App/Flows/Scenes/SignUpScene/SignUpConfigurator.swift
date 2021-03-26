@@ -1,5 +1,5 @@
 //
-//  SignUpConfigure.swift
+//  SignUpConfigurator.swift
 //  GBShop
 //
 //  Created by Aksilont on 22.03.2021.
@@ -8,7 +8,7 @@
 
 import Foundation
 
-class SignUpConfigure {
+class SignUpConfigurator {
     static func setup(viewController: SignUpViewController, requestFactory: RequestFactory) {
         let interactor              = SignUpInteractor(with: requestFactory)
         let presenter               = SignUpPresenter()

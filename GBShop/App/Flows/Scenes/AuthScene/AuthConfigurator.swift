@@ -1,5 +1,5 @@
 //
-//  HomeConfigure.swift
+//  AuthConfigurator.swift
 //  GBShop
 //
 //  Created by Aksilont on 22.03.2021.
@@ -8,16 +8,15 @@
 
 import Foundation
 
-class HomeConfigure {
-    static func setup(viewController: HomeViewController, requestFactory: RequestFactory) {
-        let interactor              = HomeInteractor(with: requestFactory)
-        let presenter               = HomePresenter()
-        let router                  = HomeRouter()
+class AuthConfigurator {
+    static func setup(viewController: AuthViewController, requestFactory: RequestFactory) {
+        let interactor              = AuthInteractor(with: requestFactory)
+        let presenter               = AuthPresenter()
+        let router                  = AuthRouter()
         viewController.interactor   = interactor
         viewController.router       = router
         interactor.presenter        = presenter
         presenter.viewController    = viewController
         router.viewController       = viewController
-        router.dataStore            = interactor
     }
 }

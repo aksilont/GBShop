@@ -69,7 +69,6 @@ class GetReviewsView: UIView {
         let paddingSide: CGFloat = 30.0
         
         NSLayoutConstraint.activate([
-            
             productNameLabel.topAnchor.constraint(equalTo: safeAreaLayoutGuide.topAnchor, constant: paddingSide),
             productNameLabel.centerXAnchor.constraint(equalTo: centerXAnchor),
             

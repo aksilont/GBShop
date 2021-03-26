@@ -33,7 +33,7 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, with requestFactory: RequestFactory) {
         self.requestFactory = requestFactory
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        HomeConfigure.setup(viewController: self, requestFactory: requestFactory)
+        HomeConfigurator.setup(viewController: self, requestFactory: requestFactory)
     }
     
     required init?(coder: NSCoder) {
@@ -87,7 +87,7 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        self.router?.routeToGoodsById(productId: products[indexPath.row].id)
+        self.router?.routeToGoodsById()
     }
     
 }

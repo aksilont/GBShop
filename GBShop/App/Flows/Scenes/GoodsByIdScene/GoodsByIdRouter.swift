@@ -41,7 +41,8 @@ class GoodsByIdRouter: NSObject, GoodsByIdRoutingLogic, GoodsByIdDataPassing {
     
     // MARK: - Navigation
     
-    private func navigateToGetReviews(source: GoodsByIdViewController, destination: UIViewController) {
+    private func navigateToGetReviews(source: GoodsByIdViewController, destination: GetReviewsViewController) {
+        source.navigationItem.backBarButtonItem = UIBarButtonItem()
         source.navigationController?.pushViewController(destination, animated: true)
     }
     
@@ -49,5 +50,6 @@ class GoodsByIdRouter: NSObject, GoodsByIdRoutingLogic, GoodsByIdDataPassing {
     
     private func passDataToGetReviews(source: GoodsByIdDataStore, destination: inout GetReviewsDataStore) {
         destination.productId = source.productId
+        destination.productName = source.productName
     }
 }

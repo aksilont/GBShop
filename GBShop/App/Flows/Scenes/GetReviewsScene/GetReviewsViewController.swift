@@ -67,6 +67,7 @@ class GetReviewsViewController: UIViewController, GetReviewsDisplayLogic {
         print(viewModel)
         reviews = viewModel.reviews
         DispatchQueue.main.async {
+            self.title = viewModel.productName
             self.contentView.reloadTableData()
         }
     }

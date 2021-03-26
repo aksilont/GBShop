@@ -33,7 +33,7 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     init(with requestFactory: RequestFactory) {
         self.requestFactory = requestFactory
         super.init(nibName: nil, bundle: nil)
-        AuthConfigure.setup(viewController: self, requestFactory: requestFactory)
+        AuthConfigurator.setup(viewController: self, requestFactory: requestFactory)
     }
     
     required init?(coder: NSCoder) {

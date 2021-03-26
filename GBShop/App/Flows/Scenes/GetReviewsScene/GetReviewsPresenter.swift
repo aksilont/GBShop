@@ -27,6 +27,8 @@ class GetReviewsPresenter: GetReviewsPresentationLogic {
             let viewModel = GetReviewsModels.GetReviews.ViewModel(
                 success: true,
                 pageNumber: response.pageNumber,
+                productId: response.productId,
+                productName: response.productName,
                 reviews: response.reviews,
                 message: "Success to get reviews with Product ID \(response.productId)"
             )

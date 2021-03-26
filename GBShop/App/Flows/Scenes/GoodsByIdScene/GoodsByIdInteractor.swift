@@ -14,6 +14,7 @@ protocol GoodsByIdBusinessLogic {
 
 protocol GoodsByIdDataStore {
     var productId: Int? { get set }
+    var productName: String? { get }
 }
 
 class GoodsByIdInteractor: GoodsByIdBusinessLogic, GoodsByIdDataStore {
@@ -28,6 +29,7 @@ class GoodsByIdInteractor: GoodsByIdBusinessLogic, GoodsByIdDataStore {
     var presenter: GoodsByIdPresentationLogic?
     
     var productId: Int?
+    var productName: String?
     
     // MARK: - Init
     
@@ -41,6 +43,8 @@ class GoodsByIdInteractor: GoodsByIdBusinessLogic, GoodsByIdDataStore {
     func getGoodsById(request: GoodsByIdModels.GoodsById.Request) {
         guard let productId = productId else { return }
         worker.getGoodsById(productId: productId) { (modelResult) in
+            self.productId = productId
+            self.productName = modelResult.name
             let response = GoodsByIdModels.GoodsById.Response(result: modelResult.result,
                                                               id: productId,
                                                               price: modelResult.price,

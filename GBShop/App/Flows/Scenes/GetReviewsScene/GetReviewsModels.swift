@@ -17,11 +17,14 @@ enum GetReviewsModels {
         struct Response {
             let pageNumber: Int
             let productId: Int
+            let productName: String
             let reviews: [Review]
         }
         struct ViewModel {
             let success: Bool
             let pageNumber: Int
+            let productId: Int
+            let productName: String
             let reviews: [Review]
             let message: String?
         }

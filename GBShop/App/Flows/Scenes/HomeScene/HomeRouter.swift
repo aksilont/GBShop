@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol HomeRoutingLogic {
-    func routeToGoodsById(productId: Int)
+    func routeToGoodsById()
 }
 
 protocol HomeDataPassing {
@@ -25,23 +25,35 @@ class HomeRouter: NSObject, HomeRoutingLogic, HomeDataPassing {
     
     // MARK: - HomeRoutingLogic
     
-    func routeToGoodsById(productId: Int) {
-        guard let viewController = viewController else { fatalError("Fail route to GetReviews") }
+    func routeToGoodsById() {
+        guard
+            let viewController = viewController,
+            let homeDS = dataStore
+        else { fatalError("Fail route to GetReviews") }
         
         let goodsByIdVC = GoodsByIdViewController(nibName: "GoodsByIdViewController",
-                                                    bundle: nil,
-                                                    with: viewController.requestFactory)
+                                                  bundle: nil,
+                                                  with: viewController.requestFactory)
         guard var goodsByIdDS = goodsByIdVC.router?.dataStore
         else { fatalError("Fail to get data store GetReviews") }
         
-        goodsByIdDS.productId = productId
-        
-        navigateToNext(source: viewController, destination: goodsByIdVC)
+        passDataToGoodsById(source: homeDS, destination: &goodsByIdDS)
+        navigateToGoodsById(source: viewController, destination: goodsByIdVC)
     }
     
     // MARK: - Navigation
     
-    private func navigateToNext(source: HomeViewController, destination: UIViewController) {
+    private func navigateToGoodsById(source: HomeViewController, destination: GoodsByIdViewController) {
+        source.navigationItem.backBarButtonItem = UIBarButtonItem()
         source.navigationController?.pushViewController(destination, animated: true)
+    }
+    
+    // MARK: - Passing data
+    
+    private func passDataToGoodsById(source: HomeDataStore, destination: inout GoodsByIdDataStore) {
+        guard let selectedRow = viewController?.tableView.indexPathForSelectedRow?.row,
+              let product = source.products?[selectedRow]
+        else { return }
+        destination.productId = product.id
     }
 }

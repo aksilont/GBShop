@@ -66,10 +66,10 @@
 		7A7AACB625F929CF00296D5F /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AACB525F929CF00296D5F /* AuthRouter.swift */; };
 		7A9A4EBA2607DEAA002EB0E2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4EB82607DEAA002EB0E2 /* HomeTableViewCell.swift */; };
 		7A9A4EBB2607DEAA002EB0E2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9A4EB92607DEAA002EB0E2 /* HomeTableViewCell.xib */; };
-		7A9A4ECE2607F1CF002EB0E2 /* AuthConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4ECD2607F1CF002EB0E2 /* AuthConfigure.swift */; };
-		7A9A4ED62607F342002EB0E2 /* SignUpConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4ED52607F342002EB0E2 /* SignUpConfigure.swift */; };
+		7A9A4ECE2607F1CF002EB0E2 /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4ECD2607F1CF002EB0E2 /* AuthConfigurator.swift */; };
+		7A9A4ED62607F342002EB0E2 /* SignUpConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4ED52607F342002EB0E2 /* SignUpConfigurator.swift */; };
 		7A9A4EDE2607F3F6002EB0E2 /* ChangeUserDataConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4EDD2607F3F5002EB0E2 /* ChangeUserDataConfigure.swift */; };
-		7A9A4EE62607F5F8002EB0E2 /* HomeConfigure.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4EE52607F5F8002EB0E2 /* HomeConfigure.swift */; };
+		7A9A4EE62607F5F8002EB0E2 /* HomeConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4EE52607F5F8002EB0E2 /* HomeConfigurator.swift */; };
 		7A9C061625F959990087B533 /* SignUpPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C060F25F959990087B533 /* SignUpPresenter.swift */; };
 		7A9C061725F959990087B533 /* SignUpWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C061025F959990087B533 /* SignUpWorker.swift */; };
 		7A9C061825F959990087B533 /* SignUpRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9C061125F959990087B533 /* SignUpRouter.swift */; };
@@ -197,10 +197,10 @@
 		7A7AACB525F929CF00296D5F /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
 		7A9A4EB82607DEAA002EB0E2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		7A9A4EB92607DEAA002EB0E2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
-		7A9A4ECD2607F1CF002EB0E2 /* AuthConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigure.swift; sourceTree = "<group>"; };
-		7A9A4ED52607F342002EB0E2 /* SignUpConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigure.swift; sourceTree = "<group>"; };
+		7A9A4ECD2607F1CF002EB0E2 /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
+		7A9A4ED52607F342002EB0E2 /* SignUpConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpConfigurator.swift; sourceTree = "<group>"; };
 		7A9A4EDD2607F3F5002EB0E2 /* ChangeUserDataConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataConfigure.swift; sourceTree = "<group>"; };
-		7A9A4EE52607F5F8002EB0E2 /* HomeConfigure.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigure.swift; sourceTree = "<group>"; };
+		7A9A4EE52607F5F8002EB0E2 /* HomeConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeConfigurator.swift; sourceTree = "<group>"; };
 		7A9C060F25F959990087B533 /* SignUpPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpPresenter.swift; sourceTree = "<group>"; };
 		7A9C061025F959990087B533 /* SignUpWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpWorker.swift; sourceTree = "<group>"; };
 		7A9C061125F959990087B533 /* SignUpRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpRouter.swift; sourceTree = "<group>"; };
@@ -318,7 +318,7 @@
 		7A20740B25F953C00018407B /* SignUpScene */ = {
 			isa = PBXGroup;
 			children = (
-				7A9A4ED52607F342002EB0E2 /* SignUpConfigure.swift */,
+				7A9A4ED52607F342002EB0E2 /* SignUpConfigurator.swift */,
 				7A9C061325F959990087B533 /* SignUpViewController.swift */,
 				7A9C061425F959990087B533 /* SignUpInteractor.swift */,
 				7A9C060F25F959990087B533 /* SignUpPresenter.swift */,
@@ -382,7 +382,7 @@
 		7A55F93925F9EC790023DF83 /* HomeScene */ = {
 			isa = PBXGroup;
 			children = (
-				7A9A4EE52607F5F8002EB0E2 /* HomeConfigure.swift */,
+				7A9A4EE52607F5F8002EB0E2 /* HomeConfigurator.swift */,
 				7A20E7C925FA75B30031E850 /* HomeViewController.xib */,
 				7A20E7B625FA03230031E850 /* HomeViewController.swift */,
 				7A20E7B725FA03230031E850 /* HomeInteractor.swift */,
@@ -428,7 +428,7 @@
 		7A7AAC9825F8156E00296D5F /* AuthScene */ = {
 			isa = PBXGroup;
 			children = (
-				7A9A4ECD2607F1CF002EB0E2 /* AuthConfigure.swift */,
+				7A9A4ECD2607F1CF002EB0E2 /* AuthConfigurator.swift */,
 				7A7AAC9E25F81A4100296D5F /* AuthViewController.swift */,
 				7A7AACA325F81C8F00296D5F /* AuthInteractor.swift */,
 				7A7AACA825F81CA200296D5F /* AuthPresenter.swift */,
@@ -877,7 +877,7 @@
 				7AA5AD6025D9BC5600D9F949 /* AbstractErrorParser.swift in Sources */,
 				7AA5AD7025D9BF2B00D9F949 /* ResponseCodable.swift in Sources */,
 				7A20E7BB25FA03230031E850 /* HomeModels.swift in Sources */,
-				7A9A4ECE2607F1CF002EB0E2 /* AuthConfigure.swift in Sources */,
+				7A9A4ECE2607F1CF002EB0E2 /* AuthConfigurator.swift in Sources */,
 				7A9C061825F959990087B533 /* SignUpRouter.swift in Sources */,
 				7A7AAC9F25F81A4100296D5F /* AuthViewController.swift in Sources */,
 				7AA5AD8B25D9CD8700D9F949 /* AuthRequestFactory.swift in Sources */,
@@ -929,8 +929,8 @@
 				7A7AACB125F9299C00296D5F /* AuthWorker.swift in Sources */,
 				7A9C061925F959990087B533 /* SignUpModels.swift in Sources */,
 				7A7AACA425F81C8F00296D5F /* AuthInteractor.swift in Sources */,
-				7A9A4ED62607F342002EB0E2 /* SignUpConfigure.swift in Sources */,
-				7A9A4EE62607F5F8002EB0E2 /* HomeConfigure.swift in Sources */,
+				7A9A4ED62607F342002EB0E2 /* SignUpConfigurator.swift in Sources */,
+				7A9A4EE62607F5F8002EB0E2 /* HomeConfigurator.swift in Sources */,
 				7AA5AD7525D9C50300D9F949 /* AbstractRequestFactory.swift in Sources */,
 				7A256F2C25DC6243009D5F01 /* SignUpRequestFactory.swift in Sources */,
 				7AEDFEF6260A8D370001F8CD /* GoodsByIdWorker.swift in Sources */,
