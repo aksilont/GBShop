@@ -14,6 +14,13 @@
 		7A134B5225FE80EB0099304F /* ChangeUserDataModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A134B4C25FE80EB0099304F /* ChangeUserDataModels.swift */; };
 		7A134B5325FE80EB0099304F /* ChangeUserDataViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A134B4D25FE80EB0099304F /* ChangeUserDataViewController.swift */; };
 		7A134B5425FE80EB0099304F /* ChangeUserDataInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A134B4E25FE80EB0099304F /* ChangeUserDataInteractor.swift */; };
+		7A152C10261121DF005D35C8 /* PayBasketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A152C09261121DF005D35C8 /* PayBasketPresenter.swift */; };
+		7A152C11261121DF005D35C8 /* PayBasketWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A152C0A261121DF005D35C8 /* PayBasketWorker.swift */; };
+		7A152C12261121DF005D35C8 /* PayBasketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A152C0B261121DF005D35C8 /* PayBasketRouter.swift */; };
+		7A152C13261121DF005D35C8 /* PayBasketModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A152C0C261121DF005D35C8 /* PayBasketModels.swift */; };
+		7A152C14261121DF005D35C8 /* PayBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A152C0D261121DF005D35C8 /* PayBasketViewController.swift */; };
+		7A152C15261121DF005D35C8 /* PayBasketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A152C0E261121DF005D35C8 /* PayBasketInteractor.swift */; };
+		7A152C16261121DF005D35C8 /* PayBasketConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A152C0F261121DF005D35C8 /* PayBasketConfigurator.swift */; };
 		7A1C9DC625EBA703007A6358 /* ReviewsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DC525EBA703007A6358 /* ReviewsTests.swift */; };
 		7A1C9DCB25EBA8B2007A6358 /* ReviewManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DCA25EBA8B2007A6358 /* ReviewManager.swift */; };
 		7A1C9DD325EBAB93007A6358 /* AddReviewRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A1C9DD225EBAB93007A6358 /* AddReviewRequestFactory.swift */; };
@@ -64,6 +71,11 @@
 		7A7AACA925F81CA200296D5F /* AuthPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AACA825F81CA200296D5F /* AuthPresenter.swift */; };
 		7A7AACB125F9299C00296D5F /* AuthWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AACB025F9299C00296D5F /* AuthWorker.swift */; };
 		7A7AACB625F929CF00296D5F /* AuthRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7AACB525F929CF00296D5F /* AuthRouter.swift */; };
+		7A7DE50526110D7E00E1B5E4 /* BasketItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A7DE50426110D7E00E1B5E4 /* BasketItem.swift */; };
+		7A9059982610A35100D8C264 /* GetBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9059972610A35100D8C264 /* GetBasketRequestFactory.swift */; };
+		7A9059A02610A40F00D8C264 /* GetBasketResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A90599F2610A40F00D8C264 /* GetBasketResult.swift */; };
+		7A9059AE2610B04F00D8C264 /* BasketTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9059AC2610B04F00D8C264 /* BasketTableViewCell.swift */; };
+		7A9059AF2610B04F00D8C264 /* BasketTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9059AD2610B04F00D8C264 /* BasketTableViewCell.xib */; };
 		7A9A4EBA2607DEAA002EB0E2 /* HomeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4EB82607DEAA002EB0E2 /* HomeTableViewCell.swift */; };
 		7A9A4EBB2607DEAA002EB0E2 /* HomeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 7A9A4EB92607DEAA002EB0E2 /* HomeTableViewCell.xib */; };
 		7A9A4ECE2607F1CF002EB0E2 /* AuthConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A9A4ECD2607F1CF002EB0E2 /* AuthConfigurator.swift */; };
@@ -109,6 +121,14 @@
 		7AC4950F25EE85B1007199A2 /* AddToBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4950E25EE85B1007199A2 /* AddToBasketRequestFactory.swift */; };
 		7AC4951425EECC62007199A2 /* DeleteFromBasketRequestFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC4951325EECC62007199A2 /* DeleteFromBasketRequestFactory.swift */; };
 		7AC9581825E5C3B0001C24B1 /* CatalogDataResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AC9581725E5C3B0001C24B1 /* CatalogDataResult.swift */; };
+		7ACC9F6F260E12B800DCAEB3 /* BasketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F68260E12B800DCAEB3 /* BasketPresenter.swift */; };
+		7ACC9F70260E12B800DCAEB3 /* BasketWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F69260E12B800DCAEB3 /* BasketWorker.swift */; };
+		7ACC9F71260E12B800DCAEB3 /* BasketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F6A260E12B800DCAEB3 /* BasketRouter.swift */; };
+		7ACC9F72260E12B800DCAEB3 /* BasketModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F6B260E12B800DCAEB3 /* BasketModels.swift */; };
+		7ACC9F73260E12B800DCAEB3 /* BasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F6C260E12B800DCAEB3 /* BasketViewController.swift */; };
+		7ACC9F74260E12B800DCAEB3 /* BasketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F6D260E12B800DCAEB3 /* BasketInteractor.swift */; };
+		7ACC9F75260E12B800DCAEB3 /* BasketConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F6E260E12B800DCAEB3 /* BasketConfigurator.swift */; };
+		7ACC9F7D260E417E00DCAEB3 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F7C260E417E00DCAEB3 /* BasketView.swift */; };
 		7AEDFEE7260A449B0001F8CD /* GetReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDFEE6260A449B0001F8CD /* GetReviewsView.swift */; };
 		7AEDFEF5260A8D370001F8CD /* GoodsByIdPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDFEEF260A8D370001F8CD /* GoodsByIdPresenter.swift */; };
 		7AEDFEF6260A8D370001F8CD /* GoodsByIdWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDFEF0260A8D370001F8CD /* GoodsByIdWorker.swift */; };
@@ -145,6 +165,13 @@
 		7A134B4C25FE80EB0099304F /* ChangeUserDataModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataModels.swift; sourceTree = "<group>"; };
 		7A134B4D25FE80EB0099304F /* ChangeUserDataViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataViewController.swift; sourceTree = "<group>"; };
 		7A134B4E25FE80EB0099304F /* ChangeUserDataInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataInteractor.swift; sourceTree = "<group>"; };
+		7A152C09261121DF005D35C8 /* PayBasketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketPresenter.swift; sourceTree = "<group>"; };
+		7A152C0A261121DF005D35C8 /* PayBasketWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketWorker.swift; sourceTree = "<group>"; };
+		7A152C0B261121DF005D35C8 /* PayBasketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketRouter.swift; sourceTree = "<group>"; };
+		7A152C0C261121DF005D35C8 /* PayBasketModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketModels.swift; sourceTree = "<group>"; };
+		7A152C0D261121DF005D35C8 /* PayBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketViewController.swift; sourceTree = "<group>"; };
+		7A152C0E261121DF005D35C8 /* PayBasketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketInteractor.swift; sourceTree = "<group>"; };
+		7A152C0F261121DF005D35C8 /* PayBasketConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketConfigurator.swift; sourceTree = "<group>"; };
 		7A1C9DC525EBA703007A6358 /* ReviewsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTests.swift; sourceTree = "<group>"; };
 		7A1C9DCA25EBA8B2007A6358 /* ReviewManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewManager.swift; sourceTree = "<group>"; };
 		7A1C9DD225EBAB93007A6358 /* AddReviewRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddReviewRequestFactory.swift; sourceTree = "<group>"; };
@@ -195,6 +222,11 @@
 		7A7AACA825F81CA200296D5F /* AuthPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthPresenter.swift; sourceTree = "<group>"; };
 		7A7AACB025F9299C00296D5F /* AuthWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthWorker.swift; sourceTree = "<group>"; };
 		7A7AACB525F929CF00296D5F /* AuthRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthRouter.swift; sourceTree = "<group>"; };
+		7A7DE50426110D7E00E1B5E4 /* BasketItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketItem.swift; sourceTree = "<group>"; };
+		7A9059972610A35100D8C264 /* GetBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBasketRequestFactory.swift; sourceTree = "<group>"; };
+		7A90599F2610A40F00D8C264 /* GetBasketResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetBasketResult.swift; sourceTree = "<group>"; };
+		7A9059AC2610B04F00D8C264 /* BasketTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketTableViewCell.swift; sourceTree = "<group>"; };
+		7A9059AD2610B04F00D8C264 /* BasketTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = BasketTableViewCell.xib; sourceTree = "<group>"; };
 		7A9A4EB82607DEAA002EB0E2 /* HomeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeTableViewCell.swift; sourceTree = "<group>"; };
 		7A9A4EB92607DEAA002EB0E2 /* HomeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeTableViewCell.xib; sourceTree = "<group>"; };
 		7A9A4ECD2607F1CF002EB0E2 /* AuthConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthConfigurator.swift; sourceTree = "<group>"; };
@@ -246,6 +278,14 @@
 		7AC4950E25EE85B1007199A2 /* AddToBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketRequestFactory.swift; sourceTree = "<group>"; };
 		7AC4951325EECC62007199A2 /* DeleteFromBasketRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteFromBasketRequestFactory.swift; sourceTree = "<group>"; };
 		7AC9581725E5C3B0001C24B1 /* CatalogDataResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDataResult.swift; sourceTree = "<group>"; };
+		7ACC9F68260E12B800DCAEB3 /* BasketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketPresenter.swift; sourceTree = "<group>"; };
+		7ACC9F69260E12B800DCAEB3 /* BasketWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketWorker.swift; sourceTree = "<group>"; };
+		7ACC9F6A260E12B800DCAEB3 /* BasketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketRouter.swift; sourceTree = "<group>"; };
+		7ACC9F6B260E12B800DCAEB3 /* BasketModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketModels.swift; sourceTree = "<group>"; };
+		7ACC9F6C260E12B800DCAEB3 /* BasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketViewController.swift; sourceTree = "<group>"; };
+		7ACC9F6D260E12B800DCAEB3 /* BasketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketInteractor.swift; sourceTree = "<group>"; };
+		7ACC9F6E260E12B800DCAEB3 /* BasketConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketConfigurator.swift; sourceTree = "<group>"; };
+		7ACC9F7C260E417E00DCAEB3 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
 		7AEDFEE6260A449B0001F8CD /* GetReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewsView.swift; sourceTree = "<group>"; };
 		7AEDFEEF260A8D370001F8CD /* GoodsByIdPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsByIdPresenter.swift; sourceTree = "<group>"; };
 		7AEDFEF0260A8D370001F8CD /* GoodsByIdWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsByIdWorker.swift; sourceTree = "<group>"; };
@@ -283,6 +323,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		7A152C08261121B4005D35C8 /* PayBasketScene */ = {
+			isa = PBXGroup;
+			children = (
+				7A152C0F261121DF005D35C8 /* PayBasketConfigurator.swift */,
+				7A152C0D261121DF005D35C8 /* PayBasketViewController.swift */,
+				7A152C0E261121DF005D35C8 /* PayBasketInteractor.swift */,
+				7A152C09261121DF005D35C8 /* PayBasketPresenter.swift */,
+				7A152C0C261121DF005D35C8 /* PayBasketModels.swift */,
+				7A152C0B261121DF005D35C8 /* PayBasketRouter.swift */,
+				7A152C0A261121DF005D35C8 /* PayBasketWorker.swift */,
+			);
+			path = PayBasketScene;
+			sourceTree = "<group>";
+		};
 		7A1C9DC025EBA535007A6358 /* Reviews */ = {
 			isa = PBXGroup;
 			children = (
@@ -310,7 +364,6 @@
 				7A1C9DEB25EBB2A7007A6358 /* ApproveReviewResult.swift */,
 				7A1C9DF025EBB790007A6358 /* RemoveReviewResult.swift */,
 				7A1C9DFA25EBC58F007A6358 /* GetReviewsResult.swift */,
-				7A1C9DFF25EBC5B3007A6358 /* Review.swift */,
 			);
 			path = Reviews;
 			sourceTree = "<group>";
@@ -415,6 +468,8 @@
 		7A7AAC9725F8100700296D5F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7A152C08261121B4005D35C8 /* PayBasketScene */,
+				7ACC9F41260E019600DCAEB3 /* BasketScene */,
 				7A55F93925F9EC790023DF83 /* HomeScene */,
 				7AEDFEEE260A8D030001F8CD /* GoodsByIdScene */,
 				7ABD55D02608F298006B5980 /* GetReviewsScene */,
@@ -439,6 +494,24 @@
 			path = AuthScene;
 			sourceTree = "<group>";
 		};
+		7A9059A72610B01C00D8C264 /* BasketViews */ = {
+			isa = PBXGroup;
+			children = (
+				7ACC9F7C260E417E00DCAEB3 /* BasketView.swift */,
+				7A9059AB2610B02900D8C264 /* BasketTableViewCell */,
+			);
+			path = BasketViews;
+			sourceTree = "<group>";
+		};
+		7A9059AB2610B02900D8C264 /* BasketTableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				7A9059AD2610B04F00D8C264 /* BasketTableViewCell.xib */,
+				7A9059AC2610B04F00D8C264 /* BasketTableViewCell.swift */,
+			);
+			path = BasketTableViewCell;
+			sourceTree = "<group>";
+		};
 		7A9A4EC52607E5FE002EB0E2 /* HomeTableViewCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -456,6 +529,7 @@
 				7A9C064925F96EF10087B533 /* SignUpView.swift */,
 				7A9C064E25F96EFF0087B533 /* ChangeUserDataView.swift */,
 				7AEDFEE6260A449B0001F8CD /* GetReviewsView.swift */,
+				7A9059A72610B01C00D8C264 /* BasketViews */,
 				7A9A4EC52607E5FE002EB0E2 /* HomeTableViewCell */,
 			);
 			path = Views;
@@ -548,8 +622,10 @@
 				7A2D669A25DD4E9E00AFD665 /* LogoutResult.swift */,
 				7A2D669F25DD535400AFD665 /* ChangeUserDataResult.swift */,
 				7AC9581725E5C3B0001C24B1 /* CatalogDataResult.swift */,
-				7A70A45125E27F2D003023DA /* Product.swift */,
 				7A70CECA25E2959000EE360D /* GoodsByIdResult.swift */,
+				7A70A45125E27F2D003023DA /* Product.swift */,
+				7A7DE50426110D7E00E1B5E4 /* BasketItem.swift */,
+				7A1C9DFF25EBC5B3007A6358 /* Review.swift */,
 				7A1C9DD725EBAC3B007A6358 /* Reviews */,
 				7AC494F525EE82A3007199A2 /* Basket */,
 			);
@@ -647,6 +723,7 @@
 				7AC4950E25EE85B1007199A2 /* AddToBasketRequestFactory.swift */,
 				7AC4951325EECC62007199A2 /* DeleteFromBasketRequestFactory.swift */,
 				7A248ACC25F02F71008670B0 /* PayBasketRequestFactory.swift */,
+				7A9059972610A35100D8C264 /* GetBasketRequestFactory.swift */,
 				7AC494FF25EE83A3007199A2 /* BasketManager.swift */,
 			);
 			path = Basket;
@@ -658,6 +735,7 @@
 				7AC4950425EE854B007199A2 /* AddToBasketResult.swift */,
 				7AC4950925EE8566007199A2 /* DeleteFromBasketResult.swift */,
 				7A248AD125F02FC0008670B0 /* PayBasketResult.swift */,
+				7A90599F2610A40F00D8C264 /* GetBasketResult.swift */,
 			);
 			path = Basket;
 			sourceTree = "<group>";
@@ -668,6 +746,20 @@
 				7AC494F725EE82F2007199A2 /* BasketTests.swift */,
 			);
 			path = Basket;
+			sourceTree = "<group>";
+		};
+		7ACC9F41260E019600DCAEB3 /* BasketScene */ = {
+			isa = PBXGroup;
+			children = (
+				7ACC9F6E260E12B800DCAEB3 /* BasketConfigurator.swift */,
+				7ACC9F6C260E12B800DCAEB3 /* BasketViewController.swift */,
+				7ACC9F6D260E12B800DCAEB3 /* BasketInteractor.swift */,
+				7ACC9F68260E12B800DCAEB3 /* BasketPresenter.swift */,
+				7ACC9F6B260E12B800DCAEB3 /* BasketModels.swift */,
+				7ACC9F6A260E12B800DCAEB3 /* BasketRouter.swift */,
+				7ACC9F69260E12B800DCAEB3 /* BasketWorker.swift */,
+			);
+			path = BasketScene;
 			sourceTree = "<group>";
 		};
 		7AEDFEEE260A8D030001F8CD /* GoodsByIdScene */ = {
@@ -800,6 +892,7 @@
 				7AA5AD1A25D8027B00D9F949 /* LaunchScreen.storyboard in Resources */,
 				7A9C063F25F96ACC0087B533 /* Localizable.strings in Resources */,
 				7AA5AD1725D8027B00D9F949 /* Assets.xcassets in Resources */,
+				7A9059AF2610B04F00D8C264 /* BasketTableViewCell.xib in Resources */,
 				7AEDFF0A260A8F9D0001F8CD /* GoodsByIdViewController.xib in Resources */,
 				7A9A4EBB2607DEAA002EB0E2 /* HomeTableViewCell.xib in Resources */,
 				7A20E7CA25FA75B30031E850 /* HomeViewController.xib in Resources */,
@@ -848,8 +941,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				7A134B3625FE6ED30099304F /* TabBarController.swift in Sources */,
+				7A9059A02610A40F00D8C264 /* GetBasketResult.swift in Sources */,
 				7ABD55EB2608F376006B5980 /* GetReviewsPresenter.swift in Sources */,
+				7A152C15261121DF005D35C8 /* PayBasketInteractor.swift in Sources */,
 				7A1C9DD325EBAB93007A6358 /* AddReviewRequestFactory.swift in Sources */,
+				7ACC9F72260E12B800DCAEB3 /* BasketModels.swift in Sources */,
 				7A7AAC9A25F8196100296D5F /* AuthModels.swift in Sources */,
 				7A2D66A025DD535400AFD665 /* ChangeUserDataResult.swift in Sources */,
 				7A70A44025E2789F003023DA /* CatalogData.swift in Sources */,
@@ -858,12 +954,14 @@
 				7A2D669B25DD4E9E00AFD665 /* LogoutResult.swift in Sources */,
 				7A1C9DE425EBB14C007A6358 /* ApproveReviewRequestFactory.swift in Sources */,
 				7A134B5025FE80EB0099304F /* ChangeUserDataWorker.swift in Sources */,
+				7A9059AE2610B04F00D8C264 /* BasketTableViewCell.swift in Sources */,
 				7AEDFF02260A8E020001F8CD /* GoodsByIdConfigurator.swift in Sources */,
 				7A20E7BA25FA03230031E850 /* HomeRouter.swift in Sources */,
 				7A9C062C25F95F0F0087B533 /* AuthView.swift in Sources */,
 				7A7AACA925F81CA200296D5F /* AuthPresenter.swift in Sources */,
 				7A2D669125DD4B1100AFD665 /* LogoutRequestFactory.swift in Sources */,
 				7A35DADA25DA4F28005B4A1F /* RequestFactory.swift in Sources */,
+				7ACC9F73260E12B800DCAEB3 /* BasketViewController.swift in Sources */,
 				7A2D66AD25DD538E00AFD665 /* ChangeUserData.swift in Sources */,
 				7A20E7BC25FA03230031E850 /* HomeViewController.swift in Sources */,
 				7A248AD225F02FC0008670B0 /* PayBasketResult.swift in Sources */,
@@ -899,6 +997,8 @@
 				7AC4950525EE854B007199A2 /* AddToBasketResult.swift in Sources */,
 				7AA5AD9325D9CE1B00D9F949 /* Auth.swift in Sources */,
 				7A2D66A825DD537D00AFD665 /* ChangeUserDataRequestFactory.swift in Sources */,
+				7A7DE50526110D7E00E1B5E4 /* BasketItem.swift in Sources */,
+				7ACC9F71260E12B800DCAEB3 /* BasketRouter.swift in Sources */,
 				7ABD55EE2608F376006B5980 /* GetReviewsModels.swift in Sources */,
 				7A134B5425FE80EB0099304F /* ChangeUserDataInteractor.swift in Sources */,
 				7AEDFEF7260A8D370001F8CD /* GoodsByIdRouter.swift in Sources */,
@@ -908,36 +1008,48 @@
 				7A1C9DCB25EBA8B2007A6358 /* ReviewManager.swift in Sources */,
 				7A9C061725F959990087B533 /* SignUpWorker.swift in Sources */,
 				7A134B5325FE80EB0099304F /* ChangeUserDataViewController.swift in Sources */,
+				7A152C12261121DF005D35C8 /* PayBasketRouter.swift in Sources */,
 				7AA5AD8425D9CA8400D9F949 /* User.swift in Sources */,
 				7A1C9DF625EBB7C0007A6358 /* RemoveReviewRequestFactory.swift in Sources */,
 				7A70CECB25E2959000EE360D /* GoodsByIdResult.swift in Sources */,
 				7AC4950A25EE8566007199A2 /* DeleteFromBasketResult.swift in Sources */,
+				7ACC9F70260E12B800DCAEB3 /* BasketWorker.swift in Sources */,
 				7ABD55F52608F39B006B5980 /* GetReviewsConfigurator.swift in Sources */,
 				7AC4950F25EE85B1007199A2 /* AddToBasketRequestFactory.swift in Sources */,
 				7AEDFEE7260A449B0001F8CD /* GetReviewsView.swift in Sources */,
+				7ACC9F7D260E417E00DCAEB3 /* BasketView.swift in Sources */,
 				7A7AACB625F929CF00296D5F /* AuthRouter.swift in Sources */,
 				7A70CEC625E2952700EE360D /* GoodsByIdRequestFactory.swift in Sources */,
+				7A152C11261121DF005D35C8 /* PayBasketWorker.swift in Sources */,
 				7ABD55EC2608F376006B5980 /* GetReviewsWorker.swift in Sources */,
 				7AA5AD1025D8027A00D9F949 /* SceneDelegate.swift in Sources */,
+				7A152C16261121DF005D35C8 /* PayBasketConfigurator.swift in Sources */,
 				7AC9581825E5C3B0001C24B1 /* CatalogDataResult.swift in Sources */,
 				7A9C064F25F96EFF0087B533 /* ChangeUserDataView.swift in Sources */,
+				7ACC9F6F260E12B800DCAEB3 /* BasketPresenter.swift in Sources */,
 				7A20E7B925FA03230031E850 /* HomeWorker.swift in Sources */,
 				7A2D669625DD4B1900AFD665 /* Logout.swift in Sources */,
+				7ACC9F75260E12B800DCAEB3 /* BasketConfigurator.swift in Sources */,
 				7A134B5225FE80EB0099304F /* ChangeUserDataModels.swift in Sources */,
+				7ACC9F74260E12B800DCAEB3 /* BasketInteractor.swift in Sources */,
 				7A9A4EDE2607F3F6002EB0E2 /* ChangeUserDataConfigure.swift in Sources */,
 				7A70A44525E27E0B003023DA /* CatalogDataRequestFactory.swift in Sources */,
+				7A152C13261121DF005D35C8 /* PayBasketModels.swift in Sources */,
 				7A7AACB125F9299C00296D5F /* AuthWorker.swift in Sources */,
 				7A9C061925F959990087B533 /* SignUpModels.swift in Sources */,
+				7A152C10261121DF005D35C8 /* PayBasketPresenter.swift in Sources */,
 				7A7AACA425F81C8F00296D5F /* AuthInteractor.swift in Sources */,
 				7A9A4ED62607F342002EB0E2 /* SignUpConfigurator.swift in Sources */,
 				7A9A4EE62607F5F8002EB0E2 /* HomeConfigurator.swift in Sources */,
 				7AA5AD7525D9C50300D9F949 /* AbstractRequestFactory.swift in Sources */,
+				7A152C14261121DF005D35C8 /* PayBasketViewController.swift in Sources */,
 				7A256F2C25DC6243009D5F01 /* SignUpRequestFactory.swift in Sources */,
 				7AEDFEF6260A8D370001F8CD /* GoodsByIdWorker.swift in Sources */,
 				7A9C061A25F959990087B533 /* SignUpViewController.swift in Sources */,
 				7ABD55ED2608F376006B5980 /* GetReviewsRouter.swift in Sources */,
 				7ABD55F02608F376006B5980 /* GetReviewsInteractor.swift in Sources */,
 				7A9C061625F959990087B533 /* SignUpPresenter.swift in Sources */,
+				7A9059982610A35100D8C264 /* GetBasketRequestFactory.swift in Sources */,
 				7A9C061B25F959990087B533 /* SignUpInteractor.swift in Sources */,
 				7AA5AD6525D9BD3200D9F949 /* ErrorParser.swift in Sources */,
 				7A134B4F25FE80EB0099304F /* ChangeUserDataPresenter.swift in Sources */,
