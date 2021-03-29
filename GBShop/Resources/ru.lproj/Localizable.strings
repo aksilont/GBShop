@@ -23,6 +23,7 @@
 "First name" = "Имя";
 "Address" = "Адрес";
 "Phone number" = "Тел.";
+"Quantity" = "Количество";
 
 "authButton" = "Войти";
 "signUpButton" = "Регистрация";
@@ -30,3 +31,4 @@
 "confirmButton" = "Подтвердить";
 "logoutButton" = "Выйти";
 "payBasketButton" = "Оформить заказ";
+"cancelButton" = "Отмена";

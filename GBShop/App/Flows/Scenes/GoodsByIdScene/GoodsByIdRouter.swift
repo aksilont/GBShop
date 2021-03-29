@@ -10,6 +10,7 @@ import UIKit
 
 @objc protocol GoodsByIdRoutingLogic {
     func routeToGetReviews()
+    func routeToAddToBasket()
 }
 
 protocol GoodsByIdDataPassing {
@@ -39,6 +40,20 @@ class GoodsByIdRouter: NSObject, GoodsByIdRoutingLogic, GoodsByIdDataPassing {
         navigateToGetReviews(source: viewController, destination: getReviewsVC)
     }
     
+    func routeToAddToBasket() {
+        guard
+            let viewController = viewController,
+            let goodsByIdDS = dataStore
+        else { fatalError("Fail route to GetReviews") }
+        
+        let addToBasketVC = AddToBasketViewController(nibName: nil, bundle: nil, with: viewController.requestFactory)
+        guard var addToBasketDS = addToBasketVC.router?.dataStore
+        else { fatalError("Fail to get data store GetReviews") }
+        
+        passDataToAddToBasket(source: goodsByIdDS, destination: &addToBasketDS)
+        navigateToAddToBasket(source: viewController, destination: addToBasketVC)
+    }
+    
     // MARK: - Navigation
     
     private func navigateToGetReviews(source: GoodsByIdViewController, destination: GetReviewsViewController) {
@@ -46,9 +61,18 @@ class GoodsByIdRouter: NSObject, GoodsByIdRoutingLogic, GoodsByIdDataPassing {
         source.navigationController?.pushViewController(destination, animated: true)
     }
     
+    private func navigateToAddToBasket(source: GoodsByIdViewController, destination: AddToBasketViewController) {
+        source.present(destination, animated: true, completion: nil)
+    }
+    
     // MARK: - Passing data
     
     private func passDataToGetReviews(source: GoodsByIdDataStore, destination: inout GetReviewsDataStore) {
+        destination.productId = source.productId
+        destination.productName = source.productName
+    }
+    
+    private func passDataToAddToBasket(source: GoodsByIdDataStore, destination: inout AddToBasketDataStore) {
         destination.productId = source.productId
         destination.productName = source.productName
     }
