@@ -20,9 +20,13 @@
 "E-mail" = "e-mail";
 "Credit card" = "Банковская карта";
 "Bio" = "О себе";
+"First name" = "Имя";
+"Address" = "Адрес";
+"Phone number" = "Тел.";
 
 "authButton" = "Войти";
 "signUpButton" = "Регистрация";
 "changeUserDataButton" = "Изменить профиль";
 "confirmButton" = "Подтвердить";
 "logoutButton" = "Выйти";
+"payBasketButton" = "Оформить заказ";

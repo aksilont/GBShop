@@ -9,7 +9,7 @@
 import UIKit
 
 @objc protocol PayBasketRoutingLogic {
-//    func routeToSomewhere(segue: UIStoryboardSegue?)
+    func routeToBasket()
 }
 
 protocol PayBasketDataPassing {
@@ -18,42 +18,28 @@ protocol PayBasketDataPassing {
 
 class PayBasketRouter: NSObject, PayBasketRoutingLogic, PayBasketDataPassing {
     
-    // MARK: - Private
-    
     // MARK: - Public
     
     weak var viewController: PayBasketViewController?
     var dataStore: PayBasketDataStore?
     
     // MARK: - Routing
-    /*
-    func routeToSomewhere(segue: UIStoryboardSegue?) {
-      if let segue = segue {
-        let destinationVC = segue.destination as! SomewhereViewController
-        var destinationDS = destinationVC.router!.dataStore!
-        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-      } else {
-        let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let destinationVC = storyboard.instantiateViewController(withIdentifier: "SomewhereViewController")
-            as! SomewhereViewController
-        var destinationDS = destinationVC.router!.dataStore!
-        passDataToSomewhere(source: dataStore!, destination: &destinationDS)
-        navigateToSomewhere(source: viewController!, destination: destinationVC)
-      }
+    
+    func routeToBasket() {
+        guard let viewController = viewController else { fatalError("Fail route to Auth") }
+        navigateToBasket(source: viewController)
     }
-    */
     
     // MARK: - Navigation
-    /*
-    private func navigateToSomewhere(source: PayBasketViewController, destination: SomewhereViewController) {
-      source.show(destination, sender: nil)
-    }
-    */
     
-    // MARK: - Passing data
-    /*
-    private func passDataToSomewhere(source: PayBasketDataStore, destination: inout SomewhereDataStore) {
-      destination.name = source.name
+    private func navigateToBasket(source: PayBasketViewController) {
+        DispatchQueue.main.async {
+            source.navigationController?.popViewController(animated: true)
+            if let basketVC = source.navigationController?.viewControllers.last as? BasketViewController,
+               var basketDS = basketVC.router?.dataStore {
+                basketDS.isPayedBasket = true
+                basketVC.getBasket()
+            }
+        }
     }
-    */
 }

@@ -12,10 +12,16 @@ enum PayBasketModels {
     
     enum PayBasket {
         struct Request {
+            let userId: Int
         }
         struct Response {
+            let userId: Int
+            let result: Int
+            let message: String?
         }
         struct ViewModel {
+            let userId: Int
+            let message: String?
         }
     }
     

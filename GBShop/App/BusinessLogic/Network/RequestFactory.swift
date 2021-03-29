@@ -91,4 +91,12 @@ class RequestFactory {
                              queue: sessionQueue,
                              baseUrl: baseUrl)
     }
+    
+    func makePayBasketFactory() -> PayBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return BasketManager(errorParser: errorParser,
+                             sessionManager: commonSession,
+                             queue: sessionQueue,
+                             baseUrl: baseUrl)
+    }
 }

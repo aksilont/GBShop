@@ -42,7 +42,7 @@ class BasketView: UIView {
         let widthButton: CGFloat = 200.0
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(NSLocalizedString("PayBasket", comment: ""), for: .normal)
+        button.setTitle(NSLocalizedString("payBasketButton", comment: ""), for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.backgroundColor = .systemTeal
         button.layer.cornerRadius = 15.0
