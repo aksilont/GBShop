@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		7A024D662611AB86003B3A30 /* PayBasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A024D652611AB86003B3A30 /* PayBasketView.swift */; };
 		7A134B3625FE6ED30099304F /* TabBarController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A134B3525FE6ED20099304F /* TabBarController.swift */; };
 		7A134B4F25FE80EB0099304F /* ChangeUserDataPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A134B4925FE80EB0099304F /* ChangeUserDataPresenter.swift */; };
 		7A134B5025FE80EB0099304F /* ChangeUserDataWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A134B4A25FE80EB0099304F /* ChangeUserDataWorker.swift */; };
@@ -158,6 +159,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7A024D652611AB86003B3A30 /* PayBasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PayBasketView.swift; sourceTree = "<group>"; };
 		7A134B3525FE6ED20099304F /* TabBarController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarController.swift; sourceTree = "<group>"; };
 		7A134B4925FE80EB0099304F /* ChangeUserDataPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataPresenter.swift; sourceTree = "<group>"; };
 		7A134B4A25FE80EB0099304F /* ChangeUserDataWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataWorker.swift; sourceTree = "<group>"; };
@@ -531,6 +533,7 @@
 				7AEDFEE6260A449B0001F8CD /* GetReviewsView.swift */,
 				7A9059A72610B01C00D8C264 /* BasketViews */,
 				7A9A4EC52607E5FE002EB0E2 /* HomeTableViewCell */,
+				7A024D652611AB86003B3A30 /* PayBasketView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -1017,6 +1020,7 @@
 				7ABD55F52608F39B006B5980 /* GetReviewsConfigurator.swift in Sources */,
 				7AC4950F25EE85B1007199A2 /* AddToBasketRequestFactory.swift in Sources */,
 				7AEDFEE7260A449B0001F8CD /* GetReviewsView.swift in Sources */,
+				7A024D662611AB86003B3A30 /* PayBasketView.swift in Sources */,
 				7ACC9F7D260E417E00DCAEB3 /* BasketView.swift in Sources */,
 				7A7AACB625F929CF00296D5F /* AuthRouter.swift in Sources */,
 				7A70CEC625E2952700EE360D /* GoodsByIdRequestFactory.swift in Sources */,

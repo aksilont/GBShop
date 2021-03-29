@@ -9,8 +9,8 @@
 import Foundation
 
 class PayBasketConfigurator {
-    static func setup(viewController: PayBasketViewController) {
-        let interactor              = PayBasketInteractor()
+    static func setup(viewController: PayBasketViewController, requestFactory: RequestFactory) {
+        let interactor              = PayBasketInteractor(with: requestFactory)
         let presenter               = PayBasketPresenter()
         let router                  = PayBasketRouter()
         viewController.interactor   = interactor

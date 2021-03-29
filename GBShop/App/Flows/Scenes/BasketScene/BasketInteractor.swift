@@ -13,6 +13,8 @@ protocol BasketBusinessLogic {
 }
 
 protocol BasketDataStore {
+    var basket: [BasketItem] { get set }
+    var isPayedBasket: Bool { get set }
 }
 
 class BasketInteractor: BasketBusinessLogic, BasketDataStore {
@@ -24,6 +26,7 @@ class BasketInteractor: BasketBusinessLogic, BasketDataStore {
     var worker: BasketWorker?
     
     var basket: [BasketItem] = []
+    var isPayedBasket: Bool = false
     
     // MARK: - Init
     
@@ -35,11 +38,17 @@ class BasketInteractor: BasketBusinessLogic, BasketDataStore {
     // MARK: - BasketBusinessLogic
     
     func getBasket(request: BasketModels.Basket.Request) {
-        worker?.getBasket(userId: request.userId, completion: { modelResult in
-            self.basket = modelResult.basket
-            let response = BasketModels.Basket.Response(userId: modelResult.userId,
-                                                        basket: modelResult.basket)
+        if isPayedBasket {
+            let response = BasketModels.Basket.Response(userId: request.userId,
+                                                        basket: [])
             self.presenter?.presentBasket(response: response)
-        })
+        } else {
+            worker?.getBasket(userId: request.userId, completion: { modelResult in
+                self.basket = modelResult.basket
+                let response = BasketModels.Basket.Response(userId: modelResult.userId,
+                                                            basket: modelResult.basket)
+                self.presenter?.presentBasket(response: response)
+            })
+        }
     }
 }

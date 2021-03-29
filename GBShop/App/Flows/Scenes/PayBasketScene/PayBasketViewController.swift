@@ -9,55 +9,64 @@
 import UIKit
 
 protocol PayBasketDisplayLogic: AnyObject {
-    func displaySomething(viewModel: PayBasketModels.PayBasket.ViewModel)
+    func displayPayBasket(_ viewModel: PayBasketModels.PayBasket.ViewModel)
+    func displayError(_ message: String)
 }
 
 class PayBasketViewController: UIViewController, PayBasketDisplayLogic {
     
     // MARK: - Public
     
+    var requestFactory: RequestFactory?
+    
     var interactor: PayBasketBusinessLogic?
     var router: (NSObjectProtocol & PayBasketRoutingLogic & PayBasketDataPassing)?
     
+    var contentView: PayBasketView = {
+       return PayBasketView()
+    }()
+    
     // MARK: - Init
     
-    override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+    init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?, with requestFactory: RequestFactory) {
+        self.requestFactory = requestFactory
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
-        PayBasketConfigurator.setup(viewController: self)
+        PayBasketConfigurator.setup(viewController: self, requestFactory: requestFactory)
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
     }
     
-    // MARK: - Routing
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if let scene = segue.identifier {
-            let selector = NSSelectorFromString("routeTo\(scene)WithSegue:")
-            if let router = router, router.responds(to: selector) {
-                router.perform(selector, with: segue)
-            }
-        }
-    }
-    
     // MARK: - View Lifecycle
+    
+    override func loadView() {
+        super.loadView()
+        view = contentView
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemGreen
-        doSomething()
+        setupUI()
     }
     
-    // MARK: - Do something
+    // MARK: - Setup UI
     
-    func doSomething() {
-        let request = PayBasketModels.PayBasket.Request()
-        interactor?.doSomething(request: request)
+    func setupUI() {
+        contentView.actionConfirmButton = { [weak self] in
+            let request = PayBasketModels.PayBasket.Request(userId: 123)
+            self?.interactor?.payBasket(request: request)
+        }
     }
     
     // MARK: - PayBasketDisplayLogic
     
-    func displaySomething(viewModel: PayBasketModels.PayBasket.ViewModel) {
+    func displayPayBasket(_ viewModel: PayBasketModels.PayBasket.ViewModel) {
+        router?.routeToBasket()
+        print(viewModel)
+    }
+    
+    func displayError(_ message: String) {
+        print(message)
     }
 }

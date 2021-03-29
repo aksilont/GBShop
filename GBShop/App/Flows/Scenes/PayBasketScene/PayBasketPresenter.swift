@@ -9,7 +9,7 @@
 import UIKit
 
 protocol PayBasketPresentationLogic {
-    func presentSomething(response: PayBasketModels.PayBasket.Response)
+    func presentPayBasket(response: PayBasketModels.PayBasket.Response)
 }
 
 class PayBasketPresenter: PayBasketPresentationLogic {
@@ -20,8 +20,15 @@ class PayBasketPresenter: PayBasketPresentationLogic {
     
     // MARK: - PayBasketPresentationLogic
     
-    func presentSomething(response: PayBasketModels.PayBasket.Response) {
-        let viewModel = PayBasketModels.PayBasket.ViewModel()
-        viewController?.displaySomething(viewModel: viewModel)
+    func presentPayBasket(response: PayBasketModels.PayBasket.Response) {
+        if response.result == 1 {
+            let viewModel = PayBasketModels.PayBasket.ViewModel(
+                userId: response.userId,
+                message: response.message
+            )
+            viewController?.displayPayBasket(viewModel)
+        } else {
+            viewController?.displayError("ERROR to pay basket with user ID \(response.userId)")
+        }
     }
 }
