@@ -130,6 +130,14 @@
 		7ACC9F74260E12B800DCAEB3 /* BasketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F6D260E12B800DCAEB3 /* BasketInteractor.swift */; };
 		7ACC9F75260E12B800DCAEB3 /* BasketConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F6E260E12B800DCAEB3 /* BasketConfigurator.swift */; };
 		7ACC9F7D260E417E00DCAEB3 /* BasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7ACC9F7C260E417E00DCAEB3 /* BasketView.swift */; };
+		7AE5955426123E86007FCA57 /* AddToBasketPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5954D26123E86007FCA57 /* AddToBasketPresenter.swift */; };
+		7AE5955526123E86007FCA57 /* AddToBasketWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5954E26123E86007FCA57 /* AddToBasketWorker.swift */; };
+		7AE5955626123E86007FCA57 /* AddToBasketRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5954F26123E86007FCA57 /* AddToBasketRouter.swift */; };
+		7AE5955726123E86007FCA57 /* AddToBasketModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5955026123E86007FCA57 /* AddToBasketModels.swift */; };
+		7AE5955826123E86007FCA57 /* AddToBasketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5955126123E86007FCA57 /* AddToBasketViewController.swift */; };
+		7AE5955926123E86007FCA57 /* AddToBasketInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5955226123E86007FCA57 /* AddToBasketInteractor.swift */; };
+		7AE5955A26123E86007FCA57 /* AddToBasketConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE5955326123E86007FCA57 /* AddToBasketConfigurator.swift */; };
+		7AE595652612667D007FCA57 /* AddToBasketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AE595642612667D007FCA57 /* AddToBasketView.swift */; };
 		7AEDFEE7260A449B0001F8CD /* GetReviewsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDFEE6260A449B0001F8CD /* GetReviewsView.swift */; };
 		7AEDFEF5260A8D370001F8CD /* GoodsByIdPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDFEEF260A8D370001F8CD /* GoodsByIdPresenter.swift */; };
 		7AEDFEF6260A8D370001F8CD /* GoodsByIdWorker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AEDFEF0260A8D370001F8CD /* GoodsByIdWorker.swift */; };
@@ -288,6 +296,14 @@
 		7ACC9F6D260E12B800DCAEB3 /* BasketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketInteractor.swift; sourceTree = "<group>"; };
 		7ACC9F6E260E12B800DCAEB3 /* BasketConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketConfigurator.swift; sourceTree = "<group>"; };
 		7ACC9F7C260E417E00DCAEB3 /* BasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BasketView.swift; sourceTree = "<group>"; };
+		7AE5954D26123E86007FCA57 /* AddToBasketPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketPresenter.swift; sourceTree = "<group>"; };
+		7AE5954E26123E86007FCA57 /* AddToBasketWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketWorker.swift; sourceTree = "<group>"; };
+		7AE5954F26123E86007FCA57 /* AddToBasketRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketRouter.swift; sourceTree = "<group>"; };
+		7AE5955026123E86007FCA57 /* AddToBasketModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketModels.swift; sourceTree = "<group>"; };
+		7AE5955126123E86007FCA57 /* AddToBasketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketViewController.swift; sourceTree = "<group>"; };
+		7AE5955226123E86007FCA57 /* AddToBasketInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketInteractor.swift; sourceTree = "<group>"; };
+		7AE5955326123E86007FCA57 /* AddToBasketConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketConfigurator.swift; sourceTree = "<group>"; };
+		7AE595642612667D007FCA57 /* AddToBasketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddToBasketView.swift; sourceTree = "<group>"; };
 		7AEDFEE6260A449B0001F8CD /* GetReviewsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GetReviewsView.swift; sourceTree = "<group>"; };
 		7AEDFEEF260A8D370001F8CD /* GoodsByIdPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsByIdPresenter.swift; sourceTree = "<group>"; };
 		7AEDFEF0260A8D370001F8CD /* GoodsByIdWorker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GoodsByIdWorker.swift; sourceTree = "<group>"; };
@@ -470,6 +486,7 @@
 		7A7AAC9725F8100700296D5F /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				7AE5954C26123E3D007FCA57 /* AddToBasket */,
 				7A152C08261121B4005D35C8 /* PayBasketScene */,
 				7ACC9F41260E019600DCAEB3 /* BasketScene */,
 				7A55F93925F9EC790023DF83 /* HomeScene */,
@@ -534,6 +551,7 @@
 				7A9059A72610B01C00D8C264 /* BasketViews */,
 				7A9A4EC52607E5FE002EB0E2 /* HomeTableViewCell */,
 				7A024D652611AB86003B3A30 /* PayBasketView.swift */,
+				7AE595642612667D007FCA57 /* AddToBasketView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -765,6 +783,20 @@
 			path = BasketScene;
 			sourceTree = "<group>";
 		};
+		7AE5954C26123E3D007FCA57 /* AddToBasket */ = {
+			isa = PBXGroup;
+			children = (
+				7AE5955326123E86007FCA57 /* AddToBasketConfigurator.swift */,
+				7AE5955126123E86007FCA57 /* AddToBasketViewController.swift */,
+				7AE5955226123E86007FCA57 /* AddToBasketInteractor.swift */,
+				7AE5954D26123E86007FCA57 /* AddToBasketPresenter.swift */,
+				7AE5955026123E86007FCA57 /* AddToBasketModels.swift */,
+				7AE5954F26123E86007FCA57 /* AddToBasketRouter.swift */,
+				7AE5954E26123E86007FCA57 /* AddToBasketWorker.swift */,
+			);
+			path = AddToBasket;
+			sourceTree = "<group>";
+		};
 		7AEDFEEE260A8D030001F8CD /* GoodsByIdScene */ = {
 			isa = PBXGroup;
 			children = (
@@ -943,6 +975,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7AE5955726123E86007FCA57 /* AddToBasketModels.swift in Sources */,
 				7A134B3625FE6ED30099304F /* TabBarController.swift in Sources */,
 				7A9059A02610A40F00D8C264 /* GetBasketResult.swift in Sources */,
 				7ABD55EB2608F376006B5980 /* GetReviewsPresenter.swift in Sources */,
@@ -977,6 +1010,7 @@
 				7A256F3625DC62B7009D5F01 /* SignUpResult.swift in Sources */,
 				7AA5AD6025D9BC5600D9F949 /* AbstractErrorParser.swift in Sources */,
 				7AA5AD7025D9BF2B00D9F949 /* ResponseCodable.swift in Sources */,
+				7AE595652612667D007FCA57 /* AddToBasketView.swift in Sources */,
 				7A20E7BB25FA03230031E850 /* HomeModels.swift in Sources */,
 				7A9A4ECE2607F1CF002EB0E2 /* AuthConfigurator.swift in Sources */,
 				7A9C061825F959990087B533 /* SignUpRouter.swift in Sources */,
@@ -1005,13 +1039,16 @@
 				7ABD55EE2608F376006B5980 /* GetReviewsModels.swift in Sources */,
 				7A134B5425FE80EB0099304F /* ChangeUserDataInteractor.swift in Sources */,
 				7AEDFEF7260A8D370001F8CD /* GoodsByIdRouter.swift in Sources */,
+				7AE5955926123E86007FCA57 /* AddToBasketInteractor.swift in Sources */,
 				7AC4950025EE83A3007199A2 /* BasketManager.swift in Sources */,
 				7A1C9DF125EBB790007A6358 /* RemoveReviewResult.swift in Sources */,
 				7AEDFEF9260A8D370001F8CD /* GoodsByIdViewController.swift in Sources */,
 				7A1C9DCB25EBA8B2007A6358 /* ReviewManager.swift in Sources */,
 				7A9C061725F959990087B533 /* SignUpWorker.swift in Sources */,
+				7AE5955A26123E86007FCA57 /* AddToBasketConfigurator.swift in Sources */,
 				7A134B5325FE80EB0099304F /* ChangeUserDataViewController.swift in Sources */,
 				7A152C12261121DF005D35C8 /* PayBasketRouter.swift in Sources */,
+				7AE5955426123E86007FCA57 /* AddToBasketPresenter.swift in Sources */,
 				7AA5AD8425D9CA8400D9F949 /* User.swift in Sources */,
 				7A1C9DF625EBB7C0007A6358 /* RemoveReviewRequestFactory.swift in Sources */,
 				7A70CECB25E2959000EE360D /* GoodsByIdResult.swift in Sources */,
@@ -1027,6 +1064,7 @@
 				7A152C11261121DF005D35C8 /* PayBasketWorker.swift in Sources */,
 				7ABD55EC2608F376006B5980 /* GetReviewsWorker.swift in Sources */,
 				7AA5AD1025D8027A00D9F949 /* SceneDelegate.swift in Sources */,
+				7AE5955626123E86007FCA57 /* AddToBasketRouter.swift in Sources */,
 				7A152C16261121DF005D35C8 /* PayBasketConfigurator.swift in Sources */,
 				7AC9581825E5C3B0001C24B1 /* CatalogDataResult.swift in Sources */,
 				7A9C064F25F96EFF0087B533 /* ChangeUserDataView.swift in Sources */,
@@ -1042,6 +1080,7 @@
 				7A7AACB125F9299C00296D5F /* AuthWorker.swift in Sources */,
 				7A9C061925F959990087B533 /* SignUpModels.swift in Sources */,
 				7A152C10261121DF005D35C8 /* PayBasketPresenter.swift in Sources */,
+				7AE5955826123E86007FCA57 /* AddToBasketViewController.swift in Sources */,
 				7A7AACA425F81C8F00296D5F /* AuthInteractor.swift in Sources */,
 				7A9A4ED62607F342002EB0E2 /* SignUpConfigurator.swift in Sources */,
 				7A9A4EE62607F5F8002EB0E2 /* HomeConfigurator.swift in Sources */,
@@ -1052,6 +1091,7 @@
 				7A9C061A25F959990087B533 /* SignUpViewController.swift in Sources */,
 				7ABD55ED2608F376006B5980 /* GetReviewsRouter.swift in Sources */,
 				7ABD55F02608F376006B5980 /* GetReviewsInteractor.swift in Sources */,
+				7AE5955526123E86007FCA57 /* AddToBasketWorker.swift in Sources */,
 				7A9C061625F959990087B533 /* SignUpPresenter.swift in Sources */,
 				7A9059982610A35100D8C264 /* GetBasketRequestFactory.swift in Sources */,
 				7A9C061B25F959990087B533 /* SignUpInteractor.swift in Sources */,

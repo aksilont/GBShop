@@ -23,6 +23,7 @@
 "First name" = "First name";
 "Address" = "Address";
 "Phone number" = "Phone number";
+"Quantity" = "Quantity";
 
 "authButton" = "Log in";
 "signUpButton" = "Sign Up";
@@ -30,3 +31,4 @@
 "confirmButton" = "Confirm";
 "logoutButton" = "Logout";
 "payBasketButton" = "Pay your order";
+"cancelButton" = "Cancel";

@@ -35,7 +35,7 @@ class ViewFactory {
         return stackView
     }
     
-    private func createStackView(label: String) -> UIStackView {
+    func createStackView(label: String) -> UIStackView {
         let widthLabel: CGFloat = 150.0
         
         let newLabel = UILabel()
@@ -49,6 +49,7 @@ class ViewFactory {
         newTextField.autocorrectionType = .no
         
         let newStack = UIStackView(arrangedSubviews: [newLabel, newTextField])
+        newStack.translatesAutoresizingMaskIntoConstraints = false
         newStack.axis = .horizontal
         newStack.spacing = 20.0
         

@@ -57,6 +57,7 @@ class GoodsByIdViewController: UIViewController, GoodsByIdDisplayLogic {
     }
     
     @objc func addToBasket(_ sender: UIButton) {
+        router?.routeToAddToBasket()
     }
     
     // MARK: - IBAction
