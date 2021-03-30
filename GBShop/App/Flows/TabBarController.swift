@@ -54,6 +54,7 @@ class TabBarController: UITabBarController {
         authViewController.tabBarItem = UITabBarItem.init(title: authViewController.title,
                                                           image: UIImage(systemName: "person.circle"),
                                                           selectedImage: UIImage(systemName: "person.circle.fill"))
+        authViewController.tabBarItem.accessibilityIdentifier = "profile"
         let naviAuthViewController = UINavigationController(rootViewController: authViewController)
         controllers.append(naviAuthViewController)
         
