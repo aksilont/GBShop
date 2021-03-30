@@ -33,4 +33,16 @@ class BasketWorker {
             }
         }
     }
+    
+    func deleteFromBasket(productId: Int, completion: @escaping(DeleteFromBasketResult) -> Void) {
+        let deleteFromBasketFactory = requestFactory.makeDeleteFromBasketFactory()
+        deleteFromBasketFactory.deleteFromBasket(productId: productId) { (response) in
+            switch response.result {
+            case .success(let model):
+                completion(model)
+            case .failure(let error):
+                print(error.localizedDescription)
+            }
+        }
+    }
 }

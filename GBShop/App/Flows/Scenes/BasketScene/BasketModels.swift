@@ -24,4 +24,17 @@ enum BasketModels {
         }
     }
     
+    enum DeleteFromBasket {
+        struct Request {
+            let productId: Int
+        }
+        struct Response {
+            let result: Int
+        }
+        struct ViewModel {
+            let success: Bool
+            let message: String?
+        }
+    }
+    
 }

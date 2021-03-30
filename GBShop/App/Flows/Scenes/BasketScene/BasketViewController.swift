@@ -10,6 +10,8 @@ import UIKit
 
 protocol BasketDisplayLogic: AnyObject {
     func displayBasket(viewModel: BasketModels.Basket.ViewModel)
+    func displayDeleteFromBasket(viewModel: BasketModels.DeleteFromBasket.ViewModel)
+    func displayError(_ message: String)
 }
 
 class BasketViewController: UIViewController, BasketDisplayLogic {
@@ -78,6 +80,17 @@ class BasketViewController: UIViewController, BasketDisplayLogic {
             self.contentView.reloadTableData(isEmpty: (self.basket.isEmpty))
         }
     }
+    
+    func displayDeleteFromBasket(viewModel: BasketModels.DeleteFromBasket.ViewModel) {
+        print(viewModel)
+        DispatchQueue.main.async {
+            self.contentView.reloadTableData(isEmpty: (self.basket.isEmpty))
+        }
+    }
+    
+    func displayError(_ message: String) {
+        print(message)
+    }
 }
 
 extension BasketViewController: BasketTableViewDelegate {
@@ -93,5 +106,16 @@ extension BasketViewController: BasketTableViewDelegate {
             return cell
         }
         return UITableViewCell()
+    }
+    
+    func tableView(_ tableView: UITableView,
+                   commit editingStyle: UITableViewCell.EditingStyle,
+                   forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let request = BasketModels.DeleteFromBasket.Request(productId: basket[indexPath.row].product.id)
+            interactor?.deleteFromBasket(request: request)
+            basket.remove(at: indexPath.row)
+            tableView.deleteRows(at: [indexPath], with: .fade)
+        }
     }
 }

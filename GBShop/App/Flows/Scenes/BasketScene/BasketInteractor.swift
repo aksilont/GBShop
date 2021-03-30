@@ -10,6 +10,7 @@ import Foundation
 
 protocol BasketBusinessLogic {
     func getBasket(request: BasketModels.Basket.Request)
+    func deleteFromBasket(request: BasketModels.DeleteFromBasket.Request)
 }
 
 protocol BasketDataStore {
@@ -50,5 +51,12 @@ class BasketInteractor: BasketBusinessLogic, BasketDataStore {
                 self.presenter?.presentBasket(response: response)
             })
         }
+    }
+    
+    func deleteFromBasket(request: BasketModels.DeleteFromBasket.Request) {
+        worker?.deleteFromBasket(productId: request.productId, completion: { (modelResult) in
+            let response = BasketModels.DeleteFromBasket.Response(result: modelResult.result)
+            self.presenter?.presentDeleteFromBasket(response: response)
+        })
     }
 }
