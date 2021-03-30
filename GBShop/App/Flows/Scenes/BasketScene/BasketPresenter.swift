@@ -10,6 +10,7 @@ import UIKit
 
 protocol BasketPresentationLogic {
     func presentBasket(response: BasketModels.Basket.Response)
+    func presentDeleteFromBasket(response: BasketModels.DeleteFromBasket.Response)
 }
 
 class BasketPresenter: BasketPresentationLogic {
@@ -24,5 +25,14 @@ class BasketPresenter: BasketPresentationLogic {
         let viewModel = BasketModels.Basket.ViewModel(basket: response.basket,
                                                       message: "Success to get basket with userId: \(response.userId)")
         viewController?.displayBasket(viewModel: viewModel)
+    }
+    
+    func presentDeleteFromBasket(response: BasketModels.DeleteFromBasket.Response) {
+        if response.result == 1 {
+            let viewModel = BasketModels.DeleteFromBasket.ViewModel(success: true, message: "Success to delete")
+            viewController?.displayDeleteFromBasket(viewModel: viewModel)
+        } else {
+            viewController?.displayError("Error")
+        }
     }
 }
