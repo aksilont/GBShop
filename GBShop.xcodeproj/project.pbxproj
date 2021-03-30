@@ -212,6 +212,8 @@
 		7A2D66A725DD537D00AFD665 /* ChangeUserDataRequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataRequestFactory.swift; sourceTree = "<group>"; };
 		7A2D66AC25DD538E00AFD665 /* ChangeUserData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserData.swift; sourceTree = "<group>"; };
 		7A35DAD925DA4F28005B4A1F /* RequestFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactory.swift; sourceTree = "<group>"; };
+		7A4B6ED42613274600D31861 /* FastTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = FastTests.xctestplan; sourceTree = "<group>"; };
+		7A4B6ED8261327FE00D31861 /* SlowTests.xctestplan */ = {isa = PBXFileReference; lastKnownFileType = text; path = SlowTests.xctestplan; sourceTree = "<group>"; };
 		7A4F797825DDAD93000C562F /* RequestFactoryTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequestFactoryTests.swift; sourceTree = "<group>"; };
 		7A4F797D25DDB733000C562F /* AuthTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthTests.swift; sourceTree = "<group>"; };
 		7A4F798525DDB755000C562F /* SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
@@ -559,6 +561,8 @@
 		7AA5AD0125D8027A00D9F949 = {
 			isa = PBXGroup;
 			children = (
+				7A4B6ED42613274600D31861 /* FastTests.xctestplan */,
+				7A4B6ED8261327FE00D31861 /* SlowTests.xctestplan */,
 				7AA5AD0C25D8027A00D9F949 /* GBShop */,
 				7AA5AD2325D8027B00D9F949 /* GBShopTests */,
 				7AA5AD2E25D8027B00D9F949 /* GBShopUITests */,
