@@ -52,6 +52,7 @@ class AuthView: UIView {
         button.setTitle(NSLocalizedString("signUpButton", comment: ""), for: .normal)
         button.setTitleColor(.systemGray, for: .normal)
         button.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
+        button.accessibilityIdentifier = "singUpButton"
         return button
     }()
     var actionSignUpButton: (() -> Void)?

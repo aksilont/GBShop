@@ -47,6 +47,59 @@ class GBShopUITests: XCTestCase {
         let profileView = app.otherElements["profileView"].firstMatch
         XCTAssertTrue(profileView.waitForExistence(timeout: 5.0))
     }
+    
+    func testSignUp() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let tabBarProfile = app.buttons["profile"].firstMatch
+        XCTAssertTrue(tabBarProfile.isHittable, "\(app.debugDescription)")
+        tabBarProfile.tap()
+        
+        let authView = app.otherElements["authView"].firstMatch
+        XCTAssertTrue(authView.waitForExistence(timeout: 2.0))
+        
+        let signUpButton = app.buttons["singUpButton"].firstMatch
+        XCTAssertTrue(signUpButton.isHittable, "\(app.debugDescription)")
+        signUpButton.tap()
+        
+        let signUpView = app.otherElements["signUpView"].firstMatch
+        XCTAssertTrue(signUpView.waitForExistence(timeout: 5.0))
+        
+        let userNameField = signUpView.textFields.element(boundBy: 0)
+        userNameField.tap()
+        XCTAssertTrue(userNameField.hasFocus)
+        userNameField.typeText("admin")
+        
+        let passwordField = signUpView.textFields.element(boundBy: 1)
+        passwordField.tap()
+        XCTAssertTrue(passwordField.hasFocus)
+        passwordField.typeText("1234")
+        
+        let emailField = signUpView.textFields.element(boundBy: 2)
+        emailField.tap()
+        XCTAssertTrue(emailField.hasFocus)
+        emailField.typeText("test@test.ru")
+        
+        let genderField = signUpView.textFields.element(boundBy: 3)
+        genderField.tap()
+        XCTAssertTrue(genderField.hasFocus)
+        genderField.typeText("male")
+        
+        let cardField = signUpView.textFields.element(boundBy: 4)
+        cardField.tap()
+        XCTAssertTrue(cardField.hasFocus)
+        cardField.typeText("1234-5678-9012")
+        
+        let aboutField = signUpView.textFields.element(boundBy: 5)
+        aboutField.tap()
+        XCTAssertTrue(aboutField.hasFocus)
+        aboutField.typeText("Something about me")
+        
+        let confirmSignUpButton = app.buttons["confirmSignUpButton"].firstMatch
+        XCTAssertTrue(confirmSignUpButton.isHittable, "\(app.debugDescription)")
+        confirmSignUpButton.tap()
+    }
 }
 
 extension XCUIElement {
