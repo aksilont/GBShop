@@ -27,6 +27,7 @@ class SignUpView: UIView {
         button.layer.cornerRadius = 15.0
         button.widthAnchor.constraint(equalToConstant: widthButton).isActive = true
         button.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
+        button.accessibilityIdentifier = "confirmSignUpButton"
         return button
     }()
     var actionSignUpButton: (() -> Void)?
@@ -46,6 +47,7 @@ class SignUpView: UIView {
     // MARK: - UI
     
     private func configureUI() {
+        accessibilityIdentifier = "signUpView"
         backgroundColor = .white
         addSubview(mainStackView)
         addSubview(signUpButton)
