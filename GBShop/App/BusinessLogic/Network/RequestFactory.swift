@@ -51,4 +51,12 @@ class RequestFactory {
                               queue: sessionQueue,
                               baseUrl: baseUrl)
     }
+    
+    func makeCatalogDataFactory() -> CatalogDataRequestFactory {
+        let errorParser = makeErrorParser()
+        return CatalogData(errorParser: errorParser,
+                           sessionManager: commonSession,
+                           queue: sessionQueue,
+                           baseUrl: baseUrl)
+    }
 }
