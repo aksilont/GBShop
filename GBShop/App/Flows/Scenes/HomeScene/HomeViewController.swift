@@ -58,8 +58,8 @@ class HomeViewController: UIViewController, HomeDisplayLogic {
     // MARK: - HomeDisplayLogic
     
     func displayCatalogData(_ viewModel: HomeModels.CatalogData.ViewModel) {
-        products = viewModel.products
         DispatchQueue.main.async {
+            self.products = viewModel.products
             self.tableView.reloadData()
         }
     }

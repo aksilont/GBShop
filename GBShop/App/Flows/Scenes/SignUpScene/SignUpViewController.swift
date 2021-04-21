@@ -43,7 +43,6 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     // MARK: - View lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     

@@ -45,7 +45,6 @@ class GetReviewsViewController: UIViewController, GetReviewsDisplayLogic {
     // MARK: - View Lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     
@@ -65,8 +64,8 @@ class GetReviewsViewController: UIViewController, GetReviewsDisplayLogic {
     
     func displayReviews(_ viewModel: GetReviewsModels.GetReviews.ViewModel) {
         print(viewModel)
-        reviews = viewModel.reviews
         DispatchQueue.main.async {
+            self.reviews = viewModel.reviews
             self.title = viewModel.productName
             self.contentView.reloadTableData()
         }

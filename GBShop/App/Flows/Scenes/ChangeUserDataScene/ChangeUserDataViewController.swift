@@ -42,7 +42,6 @@ class ChangeUserDataViewController: UIViewController, ChangeUserDataDisplayLogic
     // MARK: - View Lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     

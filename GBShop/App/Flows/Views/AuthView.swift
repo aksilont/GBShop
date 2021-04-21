@@ -110,7 +110,7 @@ class AuthView: UIView {
     
     // MARK: - UI Initialize
     
-    func createView(profile: Bool = false) {
+    func reloadView(profile: Bool = false) {
         for elements in subviews {
             elements.removeFromSuperview()
         }
