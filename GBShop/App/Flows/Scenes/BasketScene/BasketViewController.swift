@@ -46,7 +46,6 @@ class BasketViewController: UIViewController, BasketDisplayLogic {
     // MARK: - View Lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     
@@ -75,8 +74,8 @@ class BasketViewController: UIViewController, BasketDisplayLogic {
     
     func displayBasket(viewModel: BasketModels.Basket.ViewModel) {
         print(viewModel)
-        basket = viewModel.basket
         DispatchQueue.main.async {
+            self.basket = viewModel.basket
             self.contentView.reloadTableData(isEmpty: (self.basket.isEmpty))
         }
     }

@@ -41,7 +41,6 @@ class AddToBasketViewController: UIViewController, AddToBasketDisplayLogic {
     // MARK: - View Lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     

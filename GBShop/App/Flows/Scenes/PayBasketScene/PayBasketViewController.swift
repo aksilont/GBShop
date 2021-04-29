@@ -41,7 +41,6 @@ class PayBasketViewController: UIViewController, PayBasketDisplayLogic {
     // MARK: - View Lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     
