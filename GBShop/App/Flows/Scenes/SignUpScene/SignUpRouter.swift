@@ -29,9 +29,6 @@ class SignUpRouter: NSObject, SignUpRoutingLogic {
     
     private func navigateToBack(source: SignUpViewController) {
         DispatchQueue.main.async {
-            if let authVC = source.navigationController?.viewControllers.first as? AuthViewController {
-                authVC.profile = true
-            }
             source.navigationController?.popViewController(animated: true)
         }
     }

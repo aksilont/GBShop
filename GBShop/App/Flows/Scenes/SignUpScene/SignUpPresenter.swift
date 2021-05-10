@@ -22,6 +22,7 @@ class SignUpPresenter: SignUpPresentationLogic {
     
     func presentData(_ response: SignUpModels.SignUpUser.Response) {
         if response.result == 1 {
+            UserDefaults.standard.setValue(true, forKey: "isLogin")
             let viewModel = SignUpModels.SignUpUser.ViewModel(success: true, messsage: response.userMessage)
             viewController?.displayData(viewModel)
         } else {

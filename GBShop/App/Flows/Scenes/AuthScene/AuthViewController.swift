@@ -26,14 +26,12 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
         return AuthView()
     }()
     
-    var profile = false
-    
     // MARK: - Init
     
     init(with requestFactory: RequestFactory) {
         self.requestFactory = requestFactory
         super.init(nibName: nil, bundle: nil)
-        AuthConfigure.setup(viewController: self, requestFactory: requestFactory)
+        AuthConfigurator.setup(viewController: self, requestFactory: requestFactory)
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +41,6 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     // MARK: - View Lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     
@@ -66,9 +63,8 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     }
     
     private func setupUI() {
-        navigationController?.navigationBar.isHidden = true
-        
-        contentView.createView(profile: profile)
+        let isLogin = UserDefaults.standard.bool(forKey: "isLogin")
+        contentView.reloadView(profile: isLogin)
         
         contentView.actionAuthButton = { [weak self] (userName, password) in
             let request = AuthModels.LoginUser.Request(userName: userName, password: password)
@@ -90,17 +86,17 @@ final class AuthViewController: UIViewController, AuthDisplayLogic {
     
     func displayUser(_ viewModel: AuthModels.LoginUser.ViewModel) {
         print(viewModel.user)
-        profile = true
         DispatchQueue.main.async {
-            self.contentView.createView(profile: true)
+            UserDefaults.standard.setValue(true, forKey: "isLogin")
+            self.contentView.reloadView(profile: true)
         }
     }
     
     func displayLogoutUser(_ message: String) {
         print(message)
-        profile = false
         DispatchQueue.main.async {
-            self.contentView.createView(profile: false)
+            UserDefaults.standard.setValue(false, forKey: "isLogin")
+            self.contentView.reloadView(profile: false)
         }
     }
     

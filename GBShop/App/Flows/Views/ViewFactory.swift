@@ -46,6 +46,7 @@ class ViewFactory {
         let newTextField = UITextField()
         newTextField.borderStyle = .roundedRect
         newTextField.textColor = .black
+        newTextField.autocorrectionType = .no
         
         let newStack = UIStackView(arrangedSubviews: [newLabel, newTextField])
         newStack.axis = .horizontal

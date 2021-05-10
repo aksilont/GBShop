@@ -33,7 +33,7 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     init(with requestFactory: RequestFactory) {
         self.requestFactory = requestFactory
         super.init(nibName: nil, bundle: nil)
-        SignUpConfigure.setup(viewController: self, requestFactory: requestFactory)
+        SignUpConfigurator.setup(viewController: self, requestFactory: requestFactory)
     }
     
     required init?(coder: NSCoder) {
@@ -43,7 +43,6 @@ class SignUpViewController: UIViewController, SignUpDisplayLogic {
     // MARK: - View lifecycle
     
     override func loadView() {
-        super.loadView()
         view = contentView
     }
     
