@@ -24,6 +24,7 @@
 "Address" = "Address";
 "Phone number" = "Phone number";
 "Quantity" = "Quantity";
+"Price" = "Price";
 
 "authButton" = "Log in";
 "signUpButton" = "Sign Up";

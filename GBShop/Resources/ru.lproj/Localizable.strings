@@ -24,6 +24,7 @@
 "Address" = "Адрес";
 "Phone number" = "Тел.";
 "Quantity" = "Количество";
+"Price" = "Цена";
 
 "authButton" = "Войти";
 "signUpButton" = "Регистрация";
