@@ -50,6 +50,8 @@ class GoodsByIdInteractor: GoodsByIdBusinessLogic, GoodsByIdDataStore {
                                                               price: modelResult.price,
                                                               description: modelResult.description,
                                                               name: modelResult.name)
+            let value = Double(modelResult.price)
+            AnalyticsManager.shared.trackViewItem(item: modelResult.name, value: value)
             self.presenter?.presentGoodsById(response: response)
         }
     }

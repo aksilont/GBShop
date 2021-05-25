@@ -56,6 +56,7 @@ class BasketInteractor: BasketBusinessLogic, BasketDataStore {
     func deleteFromBasket(request: BasketModels.DeleteFromBasket.Request) {
         worker?.deleteFromBasket(productId: request.productId, completion: { (modelResult) in
             let response = BasketModels.DeleteFromBasket.Response(result: modelResult.result)
+            AnalyticsManager.shared.trackDeleteFromCart(itemId: "\(request.productId)")
             self.presenter?.presentDeleteFromBasket(response: response)
         })
     }

@@ -43,6 +43,7 @@ class AddToBasketInteractor: AddToBasketBusinessLogic, AddToBasketDataStore {
         worker = AddToBasketWorker(with: requestFactory)
         worker?.addToBasket(productId: request.productId, quantity: request.quantity, completion: { modelResponse in
             let response = AddToBasketModels.AddToBasket.Response(result: modelResponse.result)
+            AnalyticsManager.shared.trackAddToCart(item: "\(request.productId)", value: Double(request.quantity))
             self.presenter?.presentAddToBasket(response: response)
         })
     }

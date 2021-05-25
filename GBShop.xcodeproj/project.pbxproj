@@ -57,6 +57,7 @@
 		7A4F798625DDB755000C562F /* SignUpTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F798525DDB755000C562F /* SignUpTests.swift */; };
 		7A4F798B25DDB75F000C562F /* LogoutTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F798A25DDB75F000C562F /* LogoutTests.swift */; };
 		7A4F799025DDB771000C562F /* ChangeUserDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A4F798F25DDB771000C562F /* ChangeUserDataTests.swift */; };
+		7A550FB1265BDD32001C11B5 /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A550FB0265BDD32001C11B5 /* AnalyticsManager.swift */; };
 		7A55D05226029F9F00A5E2AF /* ViewFactory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A55D05126029F9F00A5E2AF /* ViewFactory.swift */; };
 		7A70A43725E24F37003023DA /* CatalogDataTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70A43625E24F37003023DA /* CatalogDataTests.swift */; };
 		7A70A44025E2789F003023DA /* CatalogData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A70A43F25E2789F003023DA /* CatalogData.swift */; };
@@ -222,6 +223,7 @@
 		7A4F798525DDB755000C562F /* SignUpTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUpTests.swift; sourceTree = "<group>"; };
 		7A4F798A25DDB75F000C562F /* LogoutTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutTests.swift; sourceTree = "<group>"; };
 		7A4F798F25DDB771000C562F /* ChangeUserDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangeUserDataTests.swift; sourceTree = "<group>"; };
+		7A550FB0265BDD32001C11B5 /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		7A55D05126029F9F00A5E2AF /* ViewFactory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewFactory.swift; sourceTree = "<group>"; };
 		7A70A43625E24F37003023DA /* CatalogDataTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogDataTests.swift; sourceTree = "<group>"; };
 		7A70A43F25E2789F003023DA /* CatalogData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CatalogData.swift; sourceTree = "<group>"; };
@@ -684,6 +686,7 @@
 			isa = PBXGroup;
 			children = (
 				7AA5AD5E25D9BC0800D9F949 /* Network */,
+				7A550FB0265BDD32001C11B5 /* AnalyticsManager.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -1094,6 +1097,7 @@
 				7AC4950F25EE85B1007199A2 /* AddToBasketRequestFactory.swift in Sources */,
 				7AEDFEE7260A449B0001F8CD /* GetReviewsView.swift in Sources */,
 				7A024D662611AB86003B3A30 /* PayBasketView.swift in Sources */,
+				7A550FB1265BDD32001C11B5 /* AnalyticsManager.swift in Sources */,
 				7ACC9F7D260E417E00DCAEB3 /* BasketView.swift in Sources */,
 				7A7AACB625F929CF00296D5F /* AuthRouter.swift in Sources */,
 				7A70CEC625E2952700EE360D /* GoodsByIdRequestFactory.swift in Sources */,

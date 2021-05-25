@@ -37,6 +37,7 @@ class PayBasketInteractor: PayBasketBusinessLogic, PayBasketDataStore {
             let response = PayBasketModels.PayBasket.Response(userId: request.userId,
                                                               result: response.result,
                                                               message: response.userMessage)
+            AnalyticsManager.shared.trackPayBasket("payBasket(request: PayBasketModels.PayBasket.Request)")
             self.presenter?.presentPayBasket(response: response)
         })
     }

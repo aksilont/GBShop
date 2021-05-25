@@ -38,6 +38,7 @@ final class AuthInteractor: AuthBisnessLogic, AuthDataStore {
     func loginUser(_ request: AuthModels.LoginUser.Request) {
         worker.loginUser(userName: request.userName, password: request.password) { (model) in
             let response = AuthModels.LoginUser.Response(result: model.result, user: model.user)
+            AnalyticsManager.shared.trackSignIn("displayUser(_ viewModel: AuthModels.LoginUser.ViewModel)")
             self.presenter?.presentUser(response)
         }
     }
@@ -45,6 +46,7 @@ final class AuthInteractor: AuthBisnessLogic, AuthDataStore {
     func logoutUser(_ request: AuthModels.LogoutUser.Request) {
         worker.logoutUser(userId: "\(request.userId)", completion: { modelResponse in
             let response = AuthModels.LogoutUser.Response(result: modelResponse.result)
+            AnalyticsManager.shared.trackLogout("logoutUser(_ request: AuthModels.LogoutUser.Request)")
             self.presenter?.presentLogoutUser(response)
         })
     }

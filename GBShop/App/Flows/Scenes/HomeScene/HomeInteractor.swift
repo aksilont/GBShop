@@ -42,6 +42,7 @@ class HomeInteractor: HomeBusinessLogic, HomeDataStore {
             self.products = modelResult.products
             let response = HomeModels.CatalogData.Response(pageNumber: modelResult.pageNumber,
                                                            products: modelResult.products)
+            AnalyticsManager.shared.trackCatalogData("catalogData(request: HomeModels.CatalogData.Request)")
             self.presenter?.presentCatalogData(response: response)
         })
     }

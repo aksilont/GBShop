@@ -42,6 +42,7 @@ class SignUpInteractor: SignUpBusinessLogic {
             bio: request.bio,
             completion: { (model) in
                 let response = SignUpModels.SignUpUser.Response(result: model.result, userMessage: model.userMessage)
+                AnalyticsManager.shared.trackSignUp("signUp(request: SignUpModels.SignUpUser.Request)")
                 self.presenter?.presentData(response)
             }
         )
