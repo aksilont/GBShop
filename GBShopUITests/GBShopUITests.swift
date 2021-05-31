@@ -8,12 +8,15 @@
 import XCTest
 
 class GBShopUITests: XCTestCase {
-
+    
+    let app = XCUIApplication()
+    
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.
 
         // In UI tests it is usually best to stop immediately when a failure occurs.
         continueAfterFailure = false
+        setupSnapshot(app)
     }
 
     override func tearDownWithError() throws {
@@ -21,12 +24,14 @@ class GBShopUITests: XCTestCase {
     }
 
     func testAuth() throws {
-        let app = XCUIApplication()
+        
         app.launch()
         
         let tabBarProfile = app.buttons["profile"].firstMatch
         XCTAssertTrue(tabBarProfile.isHittable, "\(app.debugDescription)")
         tabBarProfile.tap()
+        
+        snapshot("LoginScreen")
         
         let authView = app.otherElements["authView"].firstMatch
         XCTAssertTrue(authView.waitForExistence(timeout: 2.0))
@@ -46,10 +51,12 @@ class GBShopUITests: XCTestCase {
         
         let profileView = app.otherElements["profileView"].firstMatch
         XCTAssertTrue(profileView.waitForExistence(timeout: 5.0))
+        
+        snapshot("WelcomeScreen")
     }
     
     func testSignUp() throws {
-        let app = XCUIApplication()
+        
         app.launch()
         
         let tabBarProfile = app.buttons["profile"].firstMatch
@@ -65,6 +72,8 @@ class GBShopUITests: XCTestCase {
         
         let signUpView = app.otherElements["signUpView"].firstMatch
         XCTAssertTrue(signUpView.waitForExistence(timeout: 5.0))
+        
+        snapshot("SignUpScreen")
         
         let userNameField = signUpView.textFields.element(boundBy: 0)
         userNameField.tap()
