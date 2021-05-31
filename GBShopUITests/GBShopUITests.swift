@@ -20,21 +20,90 @@ class GBShopUITests: XCTestCase {
         // Put teardown code here. This method is called after the invocation of each test method in the class.
     }
 
-    func testExample() throws {
-        // UI tests must launch the application that they test.
+    func testAuth() throws {
         let app = XCUIApplication()
         app.launch()
-
-        // Use recording to get started writing UI tests.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
+        
+        let tabBarProfile = app.buttons["profile"].firstMatch
+        XCTAssertTrue(tabBarProfile.isHittable, "\(app.debugDescription)")
+        tabBarProfile.tap()
+        
+        let authView = app.otherElements["authView"].firstMatch
+        XCTAssertTrue(authView.waitForExistence(timeout: 2.0))
+        
+        let userNameField = authView.textFields["userName"]
+        XCTAssertTrue(userNameField.hasFocus)
+        userNameField.typeText("admin")
+        
+        let passwordField = authView.textFields["password"]
+        passwordField.tap()
+        XCTAssertTrue(passwordField.hasFocus)
+        passwordField.typeText("123456")
+        
+        let loginButton = app.buttons["authButton"].firstMatch
+        XCTAssertTrue(loginButton.isHittable, "\(app.debugDescription)")
+        loginButton.tap()
+        
+        let profileView = app.otherElements["profileView"].firstMatch
+        XCTAssertTrue(profileView.waitForExistence(timeout: 5.0))
     }
+    
+    func testSignUp() throws {
+        let app = XCUIApplication()
+        app.launch()
+        
+        let tabBarProfile = app.buttons["profile"].firstMatch
+        XCTAssertTrue(tabBarProfile.isHittable, "\(app.debugDescription)")
+        tabBarProfile.tap()
+        
+        let authView = app.otherElements["authView"].firstMatch
+        XCTAssertTrue(authView.waitForExistence(timeout: 2.0))
+        
+        let signUpButton = app.buttons["singUpButton"].firstMatch
+        XCTAssertTrue(signUpButton.isHittable, "\(app.debugDescription)")
+        signUpButton.tap()
+        
+        let signUpView = app.otherElements["signUpView"].firstMatch
+        XCTAssertTrue(signUpView.waitForExistence(timeout: 5.0))
+        
+        let userNameField = signUpView.textFields.element(boundBy: 0)
+        userNameField.tap()
+        XCTAssertTrue(userNameField.hasFocus)
+        userNameField.typeText("admin")
+        
+        let passwordField = signUpView.textFields.element(boundBy: 1)
+        passwordField.tap()
+        XCTAssertTrue(passwordField.hasFocus)
+        passwordField.typeText("1234")
+        
+        let emailField = signUpView.textFields.element(boundBy: 2)
+        emailField.tap()
+        XCTAssertTrue(emailField.hasFocus)
+        emailField.typeText("test@test.ru")
+        
+        let genderField = signUpView.textFields.element(boundBy: 3)
+        genderField.tap()
+        XCTAssertTrue(genderField.hasFocus)
+        genderField.typeText("male")
+        
+        let cardField = signUpView.textFields.element(boundBy: 4)
+        cardField.tap()
+        XCTAssertTrue(cardField.hasFocus)
+        cardField.typeText("1234-5678-9012")
+        
+        let aboutField = signUpView.textFields.element(boundBy: 5)
+        aboutField.tap()
+        XCTAssertTrue(aboutField.hasFocus)
+        aboutField.typeText("Something about me")
+        
+        let confirmSignUpButton = app.buttons["confirmSignUpButton"].firstMatch
+        XCTAssertTrue(confirmSignUpButton.isHittable, "\(app.debugDescription)")
+        confirmSignUpButton.tap()
+    }
+}
 
-    func testLaunchPerformance() throws {
-        if #available(macOS 10.15, iOS 13.0, tvOS 13.0, *) {
-            // This measures how long it takes to launch your application.
-            measure(metrics: [XCTApplicationLaunchMetric()]) {
-                XCUIApplication().launch()
-            }
-        }
+extension XCUIElement {
+    var hasFocus: Bool {
+        self.value(forKey: "hasKeyboardFocus") as? Bool ?? false
     }
 }

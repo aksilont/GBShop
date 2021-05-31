@@ -57,6 +57,7 @@ class GoodsByIdViewController: UIViewController, GoodsByIdDisplayLogic {
     }
     
     @objc func addToBasket(_ sender: UIButton) {
+        router?.routeToAddToBasket()
     }
     
     // MARK: - IBAction
@@ -80,7 +81,7 @@ class GoodsByIdViewController: UIViewController, GoodsByIdDisplayLogic {
             self.imageView.image = UIImage(systemName: "photo.tv")
             self.nameLabel.text = viewModel.name
             self.descriptionLabel.text = viewModel.description
-            self.priceLabel.text = "Price: ".appending("\(viewModel.price)")
+            self.priceLabel.text = NSLocalizedString("Price", comment: "").appending(": \(viewModel.price)")
         }
 
         print(viewModel)

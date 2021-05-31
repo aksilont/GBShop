@@ -41,18 +41,20 @@ class TabBarController: UITabBarController {
         let naviHomeViewController = UINavigationController(rootViewController: homeViewController)
         controllers.append(naviHomeViewController)
         
-//        let getReviewsController = GetReviewsViewController(with: requestFactory)
-//        getReviewsController.title = NSLocalizedString("Reviews", comment: "")
-//        getReviewsController.tabBarItem = UITabBarItem.init(title: getReviewsController.title,
-//                                                            image: UIImage(systemName: "book.circle"),
-//                                                            selectedImage: UIImage(systemName: "book.circle.fill"))
-//        controllers.append(getReviewsController)
+        let basketViewController = BasketViewController(nibName: nil, bundle: nil, with: requestFactory)
+        basketViewController.title = NSLocalizedString("Cart", comment: "")
+        basketViewController.tabBarItem = UITabBarItem.init(title: basketViewController.title,
+                                                            image: UIImage(systemName: "cart.circle"),
+                                                            selectedImage: UIImage(systemName: "cart.circle.fill"))
+        let naviBasketViewController = UINavigationController(rootViewController: basketViewController)
+        controllers.append(naviBasketViewController)
         
         let authViewController = AuthViewController(with: requestFactory)
         authViewController.title = NSLocalizedString("Profile", comment: "")
         authViewController.tabBarItem = UITabBarItem.init(title: authViewController.title,
                                                           image: UIImage(systemName: "person.circle"),
                                                           selectedImage: UIImage(systemName: "person.circle.fill"))
+        authViewController.tabBarItem.accessibilityIdentifier = "profile"
         let naviAuthViewController = UINavigationController(rootViewController: authViewController)
         controllers.append(naviAuthViewController)
         

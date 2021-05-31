@@ -18,6 +18,8 @@ class AuthView: UIView {
         textField.borderStyle = .roundedRect
         textField.textColor = .black
         textField.placeholder = NSLocalizedString("Login", comment: "")
+        textField.accessibilityIdentifier = "userName"
+        textField.becomeFirstResponder()
         return textField
     }()
     
@@ -27,6 +29,7 @@ class AuthView: UIView {
         textField.borderStyle = .roundedRect
         textField.textColor = .black
         textField.placeholder = NSLocalizedString("Password", comment: "")
+        textField.accessibilityIdentifier = "password"
         return textField
     }()
     
@@ -38,6 +41,7 @@ class AuthView: UIView {
         button.backgroundColor = .systemGreen
         button.layer.cornerRadius = 15.0
         button.addTarget(self, action: #selector(authDidTap), for: .touchUpInside)
+        button.accessibilityIdentifier = "authButton"
         return button
     }()
     var actionAuthButton: ((String, String) -> Void)?
@@ -48,6 +52,7 @@ class AuthView: UIView {
         button.setTitle(NSLocalizedString("signUpButton", comment: ""), for: .normal)
         button.setTitleColor(.systemGray, for: .normal)
         button.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
+        button.accessibilityIdentifier = "singUpButton"
         return button
     }()
     var actionSignUpButton: (() -> Void)?
@@ -124,6 +129,7 @@ class AuthView: UIView {
     // MARK: - UI Auth
     
     private func configureUI() {
+        accessibilityIdentifier = "authView"
         backgroundColor = .white
         addSubview(userNameTextField)
         addSubview(passwordTextField)
@@ -170,6 +176,7 @@ class AuthView: UIView {
     // MARK: - UI Profile
     
     private func configureUIProfile() {
+        accessibilityIdentifier = "profileView"
         backgroundColor = .white
         addSubview(helloLabel)
         addSubview(changeUserDataButton)

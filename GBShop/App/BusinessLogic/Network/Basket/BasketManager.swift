@@ -98,7 +98,31 @@ extension BasketManager: PayBasketRequestFactory {
     }
     
     func payBasket(userId: Int, completionHandler: @escaping (AFDataResponse<PayBasketResult>) -> Void) {
-        let requestModel = PayBasketRequest(baseUrl: baseUrl, userId: 1)
+        let requestModel = PayBasketRequest(baseUrl: baseUrl, userId: userId)
+        self.request(request: requestModel, completionHander: completionHandler)
+    }
+}
+
+// MARK: - Get basket
+
+extension BasketManager: GetBasketRequestFactory {
+    
+    struct GetBasketRequest: RequestRouter {
+        var baseUrl: URL
+        var method: HTTPMethod = .post
+        var path: String = "getBasket"
+        
+        var userId: Int
+        
+        var parameters: Parameters? {
+            return [
+                "id_user": userId
+            ]
+        }
+    }
+    
+    func getBasket(userId: Int, completionHandler: @escaping (AFDataResponse<GetBasketResult>) -> Void) {
+        let requestModel = GetBasketRequest(baseUrl: baseUrl, userId: userId)
         self.request(request: requestModel, completionHander: completionHandler)
     }
 }

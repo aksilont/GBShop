@@ -1,36 +1,44 @@
 //
-//  SignUpView.swift
+//  PayBasketView.swift
 //  GBShop
 //
-//  Created by Aksilont on 11.03.2021.
+//  Created by Aksilont on 29.03.2021.
 //  Copyright © 2021 Aksilont. All rights reserved.
 //
 
 import UIKit
 
-class SignUpView: UIView {
+class PayBasketView: UIView {
     
     // MARK: - Subviews
     
     lazy private var mainStackView: UIStackView = {
         let viewFactory = ViewFactory()
-        return viewFactory.createStackViewStandart()
+        return viewFactory.createStackView(
+            fields: [
+                "First name",
+                "E-Mail",
+                "Phone number",
+                "Address",
+                "Credit card"
+            ]
+        )
     }()
     
-    lazy private var signUpButton: UIButton = {
+    lazy private var confirmButton: UIButton = {
         let widthButton: CGFloat = 200.0
         let button = UIButton()
         button.translatesAutoresizingMaskIntoConstraints = false
-        button.setTitle(NSLocalizedString("signUpButton", comment: ""), for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .systemPink
+        button.setTitle(NSLocalizedString("confirmButton", comment: ""), for: .normal)
+        button.setTitleColor(.systemGray6, for: .normal)
+        button.backgroundColor = .systemIndigo
         button.layer.cornerRadius = 15.0
         button.widthAnchor.constraint(equalToConstant: widthButton).isActive = true
-        button.addTarget(self, action: #selector(signUpDidTap), for: .touchUpInside)
-        button.accessibilityIdentifier = "confirmSignUpButton"
+        button.addTarget(self, action: #selector(confirmDidTap), for: .touchUpInside)
         return button
     }()
-    var actionSignUpButton: (() -> Void)?
+    
+    var actionConfirmButton: (() -> Void)?
     
     // MARK: - Init
     
@@ -47,16 +55,15 @@ class SignUpView: UIView {
     // MARK: - UI
     
     private func configureUI() {
-        accessibilityIdentifier = "signUpView"
         backgroundColor = .white
         addSubview(mainStackView)
-        addSubview(signUpButton)
+        addSubview(confirmButton)
         setupConstraints()
     }
     
-    @objc private func signUpDidTap(sender: UIButton) {
-        guard let actionSignUpButton = actionSignUpButton else { return }
-        actionSignUpButton()
+    @objc private func confirmDidTap(sender: UIButton) {
+        guard let actionConfirmButton = actionConfirmButton else { return }
+        actionConfirmButton()
     }
     
     private func setupConstraints() {
@@ -69,8 +76,8 @@ class SignUpView: UIView {
             mainStackView.leftAnchor.constraint(equalTo: safeArea.leftAnchor, constant: paddingSide),
             mainStackView.rightAnchor.constraint(equalTo: safeArea.rightAnchor, constant: -paddingSide),
             
-            signUpButton.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: paddingBetweenUI),
-            signUpButton.centerXAnchor.constraint(equalTo: centerXAnchor)
+            confirmButton.topAnchor.constraint(equalTo: mainStackView.bottomAnchor, constant: paddingBetweenUI),
+            confirmButton.centerXAnchor.constraint(equalTo: centerXAnchor)
             ])
     }
 }

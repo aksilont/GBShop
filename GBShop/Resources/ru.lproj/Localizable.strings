@@ -7,6 +7,7 @@
 */
 
 "Home" = "Главная";
+"Cart" = "Корзина";
 "Profile" = "Профиль";
 
 "Goods" = "Товары";
@@ -19,9 +20,16 @@
 "E-mail" = "e-mail";
 "Credit card" = "Банковская карта";
 "Bio" = "О себе";
+"First name" = "Имя";
+"Address" = "Адрес";
+"Phone number" = "Тел.";
+"Quantity" = "Количество";
+"Price" = "Цена";
 
 "authButton" = "Войти";
 "signUpButton" = "Регистрация";
 "changeUserDataButton" = "Изменить профиль";
 "confirmButton" = "Подтвердить";
 "logoutButton" = "Выйти";
+"payBasketButton" = "Оформить заказ";
+"cancelButton" = "Отмена";

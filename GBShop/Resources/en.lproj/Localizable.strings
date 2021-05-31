@@ -7,6 +7,7 @@
 */
 
 "Home" = "Home";
+"Cart" = "Cart";
 "Profile" = "Profile";
 
 "Goods" = "Goods";
@@ -19,9 +20,16 @@
 "E-mail" = "e-mail";
 "Credit card" = "Credit card";
 "Bio" = "About";
+"First name" = "First name";
+"Address" = "Address";
+"Phone number" = "Phone number";
+"Quantity" = "Quantity";
+"Price" = "Price";
 
 "authButton" = "Log in";
 "signUpButton" = "Sign Up";
 "changeUserDataButton" = "Edit profile";
 "confirmButton" = "Confirm";
 "logoutButton" = "Logout";
+"payBasketButton" = "Pay your order";
+"cancelButton" = "Cancel";

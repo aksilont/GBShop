@@ -75,4 +75,36 @@ class RequestFactory {
                              queue: sessionQueue,
                              baseUrl: baseUrl)
     }
+    
+    func makeGetBasketFactory() -> GetBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return BasketManager(errorParser: errorParser,
+                             sessionManager: commonSession,
+                             queue: sessionQueue,
+                             baseUrl: baseUrl)
+    }
+    
+    func makeAddToBasketFactory() -> AddToBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return BasketManager(errorParser: errorParser,
+                             sessionManager: commonSession,
+                             queue: sessionQueue,
+                             baseUrl: baseUrl)
+    }
+    
+    func makePayBasketFactory() -> PayBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return BasketManager(errorParser: errorParser,
+                             sessionManager: commonSession,
+                             queue: sessionQueue,
+                             baseUrl: baseUrl)
+    }
+    
+    func makeDeleteFromBasketFactory() -> DeleteFromBasketRequestFactory {
+        let errorParser = makeErrorParser()
+        return BasketManager(errorParser: errorParser,
+                             sessionManager: commonSession,
+                             queue: sessionQueue,
+                             baseUrl: baseUrl)
+    }
 }
