@@ -54,7 +54,7 @@ class GetReviewsInteractor: GetReviewsBusinessLogic, GetReviewsDataStore {
                                                                 productId: productId,
                                                                 productName: productName,
                                                                 reviews: modelResult.reviews)
-            
+            AnalyticsManager.shared.trackGetReviews("getReviews(request: GetReviewsModels.GetReviews.Request)")
             self.presenter?.presentReviews(response: response)
         })
     }

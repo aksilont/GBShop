@@ -25,6 +25,7 @@ final class AuthPresenter: AuthPresentationLogic {
             let viewModel = AuthModels.LoginUser.ViewModel(success: true, user: response.user)
             viewController?.displayUser(viewModel)
         } else {
+            AnalyticsManager.shared.trackSignInFail("presentUser(_ response: AuthModels.LoginUser.Response)")
             viewController?.displayError("Error to login")
         }
     }
@@ -33,6 +34,7 @@ final class AuthPresenter: AuthPresentationLogic {
         if response.result == 1 {
             viewController?.displayLogoutUser("Logout success")
         } else {
+            AnalyticsManager.shared.trackSignInFail("presentLogoutUser( _ response: AuthModels.LogoutUser.Response)")
             viewController?.displayError("Error to logout")
         }
     }
